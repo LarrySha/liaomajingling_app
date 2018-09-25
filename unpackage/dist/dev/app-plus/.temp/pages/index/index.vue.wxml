@@ -1,0 +1,82 @@
+<template name="345bc034">
+  <view class="_view data-v-7d7af016 content">
+    <view class="_view data-v-7d7af016 cen df_jh_drt">
+      <image src="../../static/img/logo.png" class="_image data-v-7d7af016 logo_dert"></image>
+      <view class="_view data-v-7d7af016 fz26 z9">资源扫码工具2</view>
+    </view>
+    <view class="_view data-v-7d7af016 mt20 pd">
+      <view class="_view data-v-7d7af016">
+        <text class="_text data-v-7d7af016 bgzhu dsf_jh_s yj"></text>
+        <text class="_text data-v-7d7af016 fz30 ml10">标题</text>
+      </view>
+      <view class="_view data-v-7d7af016 mt20">
+        <input class="_input data-v-7d7af016 sd_deert" />
+      </view>
+      <view class="_view data-v-7d7af016 mt30">
+        <text class="_text data-v-7d7af016 fz30 ">简介</text>
+        <text class="_text data-v-7d7af016 fz26 red">(可不填)</text>
+      </view>
+      <view class="_view data-v-7d7af016 mt20">
+        <textarea class="_textarea data-v-7d7af016 sd_deert ab" maxlength="46" />
+      </view>
+      <view class="_view data-v-7d7af016 mt30">
+        <text class="_text data-v-7d7af016 bgzhu dsf_jh_s yj"></text>
+        <text class="_text data-v-7d7af016 fz30 ml10">料</text>
+      </view>
+      <view class="_view data-v-7d7af016 mt20">
+        <view class="_view data-v-7d7af016 sd_h_deeret">
+          <view class="_view data-v-7d7af016 yj4 br df_jh_deert">
+            <image src="../../static/img/qianbi.png" class="_image data-v-7d7af016 qianbieer cz"></image>
+          </view>
+          <view class="_view data-v-7d7af016 z9 fz26 mt10">文字</view>
+        </view>
+        <view class="_view data-v-7d7af016 sd_h_deeret">
+          <view class="_view data-v-7d7af016 yj4 br df_jh_deert">
+            <image src="../../static/img/tupian.png" class="_image data-v-7d7af016 qianbieer cz"></image>
+          </view>
+          <view class="_view data-v-7d7af016 z9 fz26 mt10">图片</view>
+        </view>
+        <view class="_view data-v-7d7af016 qc"></view>
+      </view>
+    </view>
+    <view class="_view data-v-7d7af016 pl20">
+      <view class="_view data-v-7d7af016 mt30">
+        <text class="_text data-v-7d7af016 bgzhu dsf_jh_s yj"></text>
+        <text class="_text data-v-7d7af016 fz30 ml10">定价(元)</text>
+      </view>
+      <view class="_view data-v-7d7af016 d_jh_deeert pr20" wx:for="{{dingjia}}" wx:for-index="index" wx:for-item="sd">
+        <view class="_view data-v-7d7af016 br   {{sd.cls}}">{{sd.name}}</view>
+      </view>
+      <view class="_view data-v-7d7af016 qc"></view>
+      <view class="_view data-v-7d7af016 mt20 pr20">
+        <input class="_input data-v-7d7af016 sd_deert" placeholder="自定义金额" />
+      </view>
+    </view>
+    <view class="_view data-v-7d7af016 pd dsf_jh_deert mt20">
+      <view class="_view data-v-7d7af016  pt20 pm20 bbm">
+        <text class="_text data-v-7d7af016 fz30 ">其他功能</text>
+        <text class="_text data-v-7d7af016 fz26 red">(非必填)</text>
+      </view>
+      <view class="_view data-v-7d7af016 pd">
+        <view class="_view data-v-7d7af016 dsfdsf_deet fz30 pr bbm">
+          <view bindtap="f_is_ssdff_a" class="_view data-v-7d7af016"> 过期时间
+            <image src="../../static/img/down.png" class="_image data-v-7d7af016 down_deert"></image>
+          </view>
+        </view>
+        <view class="_view data-v-7d7af016 dsfdsf_deet fz30 pr bbm">
+          <view bindtap="f_is_ssdff_b" class="_view data-v-7d7af016"> 是否退款
+            <image src="../../static/img/down.png" class="_image data-v-7d7af016 down_deert"></image>
+          </view>
+        </view>
+        <view class="_view data-v-7d7af016 dsfdsf_deet fz30 pr bbm">
+          <view bindtap="f_is_ssdff_c" class="_view data-v-7d7af016"> 选择模板 </view>
+          <image src="../../static/img/down.png" class="_image data-v-7d7af016 down_deert"></image>
+        </view>
+      </view>
+    </view>
+    <view class="_view data-v-7d7af016 qc"></view>
+    <view class="_view data-v-7d7af016 pd pm40">
+      <view class="_view data-v-7d7af016 shengcsd_sewr " bindtap="sclm_ddrt"> 生成料码 </view>
+    </view>
+  </view>
+</template>

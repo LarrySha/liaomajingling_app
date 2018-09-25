@@ -1,0 +1,45 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/star/index",
+			"style": {
+
+			}
+		},
+		{
+			"path": "pages/index/index",
+			"style": {
+
+			}
+		}, {
+			"path": "pages/wodeliao/index",
+			"style": {
+
+			}
+		}
+	],
+
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "料码精灵",
+		"navigationBarBackgroundColor": "#6FC434",
+		"backgroundColor": "#fff"
+	},
+	"tabBar": {
+		"color": "#7C7C7C",
+		"selectedColor": "#6FC434",
+		"borderStyle": "white",
+		"backgroundColor": "#ffffff",
+		"list": [{
+			"pagePath": "pages/index/index",
+			"iconPath": "static/img/bottm/xz.png",
+			"selectedIconPath": "static/img/bottm/xz_a.png",
+			"text": "首页"
+		}, {
+			"pagePath": "pages/wodeliao/index",
+			"iconPath": "static/img/bottm/xy.png",
+			"selectedIconPath": "static/img/bottm/xz_b.png",
+			"text": "我的料"
+		}]
+	}
+}

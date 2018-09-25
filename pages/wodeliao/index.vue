@@ -1,0 +1,17 @@
+<template> 
+	<view class="content">
+		<text class="title">{{title}}</text>
+	</view>
+</template>
+ 
+<script>
+	export default {
+		data: {
+			title: 'Hello'
+		}
+	}
+</script>
+
+<style>
+
+</style>
