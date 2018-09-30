@@ -1,13 +1,24 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-
 		{
-			"path": "pages/wodeliao/index",
+			"path": "pages/user_center/index",
 			"style": {
 
 			}
 		}, {
+			"path": "pages/guanzhu/index",
+			"style": {
+				"navigationBarTitleText": "关注列表"
+			}
+		},
+
+		{
 			"path": "pages/index/index",
+			"style": {
+
+			}
+		}, {
+			"path": "pages/wodeliao/index",
 			"style": {
 
 			}
@@ -41,6 +52,11 @@
 			"iconPath": "static/img/bottm/xy.png",
 			"selectedIconPath": "static/img/bottm/xz_b.png",
 			"text": "我的料"
+		}, {
+			"pagePath": "pages/user_center/index",
+			"iconPath": "static/img/bottm/xw.png",
+			"selectedIconPath": "static/img/bottm/xz_c.png",
+			"text": "我的"
 		}]
 	}
 }

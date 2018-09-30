@@ -35,7 +35,30 @@
 
 			<view class="mt20">
 
-				<view class="sd_h_deeret">
+				<view class='pr sd_jh_eeer' v-if="liao_sd_a">
+					<icon type='clear' class="clse_dseert" @click="liao_sd_a=false"></icon>
+					<textarea class='br'></textarea>
+				</view>
+
+
+
+				<view class='pr' v-if="false">
+					<!--     <view class='add_sertx pr cz' >
+        <icon type='clear' class="clse_dseert" catchtap='dsf_derty' data-idx="{{index}}"></icon>
+        <image src="{{item}}"></image>
+      </view> -->
+
+					<view class='add_sertx ab cz'>
+						<image src='../../static/img/add_icon.png' class="cz"></image>
+					</view>
+
+
+				</view>
+
+
+
+
+				<view class="sd_h_deeret" v-if="!liao_sd_a" @click="liao_sd_a=true">
 					<view class='yj4 br df_jh_deert'>
 						<image src='../../static/img/qianbi.png' class='qianbieer cz'></image>
 					</view>
@@ -108,11 +131,11 @@
 			<view class="pd">
 
 				<view class='dsfdsf_deet fz30 pr bbm'>
-					<view bindtap='f_is_ssdff_a'>
+					<view @click="is_sdf_a?is_sdf_a=false:is_sdf_a=true">
 						过期时间
 						<image src='../../static/img/down.png' class="down_deert"></image>
 					</view>
-					<view class='mt20'>
+					<view class='mt20' v-if="is_sdf_a">
 						<view class='red fz26 pm20'>所选时间为稿件下架时间，此时段以后将不能被购买
 						</view>
 						<view class='sd_jh_dert fl'>
@@ -149,13 +172,13 @@
 				</view>
 
 				<view class='dsfdsf_deet fz30 pr bbm'>
-					<view>
+					<view @click="is_sdf_b?is_sdf_b=false:is_sdf_b=true">
 						是否退款
 						<image src='../../static/img/down.png' class="down_deert"></image>
 
 					</view>
 
-					<view class='mt20'>
+					<view class='mt20' v-if="is_sdf_b">
 						<view class='red fz26 pm20'>选中退款将会有一键退款的功能 </view>
 						<view bindtap='gu_seert'>
 							<view class='df_erttyxc cz'>
@@ -174,18 +197,20 @@
 
 				</view>
 				<view class='dsfdsf_deet fz30 pr bbm'>
-					<view>
+
+					<view @click="is_sdf_c?is_sdf_c=false:is_sdf_c=true">
 						选择模板
+						<image src='../../static/img/down.png' class="down_deert"></image>
 					</view>
-					<image src='../../static/img/down.png' class="down_deert"></image>
 
 
- <view class='pt20' >
-        <view class='red fz26 pm20 '>点击图片选择料码模版 </view>
-        <view>
-          <image src='/static/img/1.png' class="usdd_dseert" bindtap='xzmb_erert'></image>
-        </view>
-      </view>
+
+					<view class='pt20' v-if="is_sdf_c">
+						<view class='red fz26 pm20 '>点击图片选择料码模版 </view>
+						<view>
+							<image src='/static/img/1.png' class="usdd_dseert" bindtap='xzmb_erert'></image>
+						</view>
+					</view>
 
 
 
@@ -222,6 +247,11 @@
 			jiner: '',
 			date: "",
 			time_sd: "",
+			is_sdf_a: false,
+			is_sdf_b: false,
+			is_sdf_c: false,
+			liao_sd_a: false,
+			liao_sd_b: false,
 			is_tui: {
 				name: 'shifou',
 				value: '是否退款',
