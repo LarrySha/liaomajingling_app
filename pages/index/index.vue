@@ -4,7 +4,7 @@
 
 		<view class="cen df_jh_drt">
 			<image src="../../static/img/logo.png" class="logo_dert"></image>
-			<view class="fz26 z9">资源扫码工具2</view>
+			<view class="fz26 z9">资源扫码工具</view>
 		</view>
 
 
@@ -76,7 +76,7 @@
 				<text class="bgzhu dsf_jh_s yj"></text>
 				<text class="fz30 ml10">定价(元)</text>
 			</view>
-			<view v-for="sd in dingjia" class="d_jh_deeert pr20">
+			<view v-for="sd in dingjia" class="d_jh_deeert pr20" @click="sd_dsf(sd)">
 
 				<view class='br  ' :class="sd.cls">{{sd.name}}</view>
 			</view>
@@ -84,7 +84,7 @@
 			<view class='qc'></view>
 
 			<view class="mt20 pr20">
-				<input class="sd_deert" placeholder='自定义金额'></input>
+				<input class="sd_deert" placeholder='自定义金额' v-model="jiner"></input>
 			</view>
 
 
@@ -99,53 +99,113 @@
 
 
 
-<view class='pd dsf_jh_deert mt20' >
-  <view class=' pt20 pm20 bbm'>
-    <text class="fz30 ">其他功能</text>
-    <text class='fz26 red'>(非必填)</text>
-  </view>
+		<view class='pd dsf_jh_deert mt20'>
+			<view class=' pt20 pm20 bbm'>
+				<text class="fz30 ">其他功能</text>
+				<text class='fz26 red'>(非必填)</text>
+			</view>
 
-  <view class="pd">
-		
-    <view class='dsfdsf_deet fz30 pr bbm'>
-      <view bindtap='f_is_ssdff_a'>
-        过期时间
-        <image src='../../static/img/down.png' class="down_deert"></image>
+			<view class="pd">
+
+				<view class='dsfdsf_deet fz30 pr bbm'>
+					<view bindtap='f_is_ssdff_a'>
+						过期时间
+						<image src='../../static/img/down.png' class="down_deert"></image>
+					</view>
+					<view class='mt20'>
+						<view class='red fz26 pm20'>所选时间为稿件下架时间，此时段以后将不能被购买
+						</view>
+						<view class='sd_jh_dert fl'>
+
+							<picker mode="date" start="2018-01-01" end="2019-01-01" @change="bindDateChange" class="br dsf_dert fz26">
+								<view class="picker">
+									{{date||'请选日期'}}
+								</view>
+							</picker>
+
+
+							<picker mode="time" @change="bindDateChange_er" class="br dsf_dert fz26 ab">
+								<view class="picker">
+									{{time_sd||'请选择时间'}}
+								</view>
+							</picker>
+
+
+
+
+
+
+						</view>
+
+						<view class='ov'>
+							<text class='qingkong_de' @click='qingdf'>清空</text>
+						</view>
+						<view class="qc">
+
+						</view>
+
+
+					</view>
+				</view>
+
+				<view class='dsfdsf_deet fz30 pr bbm'>
+					<view>
+						是否退款
+						<image src='../../static/img/down.png' class="down_deert"></image>
+
+					</view>
+
+					<view class='mt20'>
+						<view class='red fz26 pm20'>选中退款将会有一键退款的功能 </view>
+						<view bindtap='gu_seert'>
+							<view class='df_erttyxc cz'>
+
+								<label class="checkbox">
+									<checkbox :value="is_tui.name" :checked="is_tui.checked" />{{is_tui.value}}
+								</label>
+
+
+
+							</view>
+						</view>
+					</view>
+
+
+
+				</view>
+				<view class='dsfdsf_deet fz30 pr bbm'>
+					<view>
+						选择模板
+					</view>
+					<image src='../../static/img/down.png' class="down_deert"></image>
+
+
+ <view class='pt20' >
+        <view class='red fz26 pm20 '>点击图片选择料码模版 </view>
+        <view>
+          <image src='/static/img/1.png' class="usdd_dseert" bindtap='xzmb_erert'></image>
+        </view>
       </view>
-    </view>
-		
-    <view class='dsfdsf_deet fz30 pr bbm'>
-      <view bindtap='f_is_ssdff_b'>
-        是否退款
-        <image src='../../static/img/down.png' class="down_deert" ></image>
-
-      </view>
-		
-
-
-    </view>
-    <view class='dsfdsf_deet fz30 pr bbm'>
-      <view bindtap='f_is_ssdff_c'>
-        选择模板
-      </view>
-      <image src='../../static/img/down.png' class="down_deert"></image>
-
-    </view>
-
-  </view>
 
 
 
 
-</view>
+				</view>
+
+			</view>
 
 
-<view class='qc'></view>
-<view class='pd pm40'>
-  <view class='shengcsd_sewr ' bindtap='sclm_ddrt'>
-    生成料码
-  </view>
-</view>
+
+
+		</view>
+
+
+		<view class='qc'></view>
+		<view class='pd pm40'>
+			<view class='shengcsd_sewr ' bindtap='sclm_ddrt'>
+				生成料码
+			</view>
+		</view>
 
 
 
@@ -159,6 +219,14 @@
 	export default {
 		data: {
 			title: 'Hello',
+			jiner: '',
+			date: "",
+			time_sd: "",
+			is_tui: {
+				name: 'shifou',
+				value: '是否退款',
+				checked: 'true'
+			},
 			dingjia: [{
 				name: "免费",
 				num: 0,
@@ -192,9 +260,32 @@
 				num: 188,
 				cls: ""
 			}]
-		}
+		},
+		components: {},
+		methods: {
+			sd_dsf(sd) {
+				this.dingjia.map(a => {
+					a.cls = ""
+				})
+				sd.cls = "act"
+				this.jiner = sd.num
+			},
+			bindDateChange(evt) {
+				this.date = evt.detail.value;
+			},
+			bindDateChange_er(evt) {
+				this.time_sd = evt.detail.value;
+			},
+			qingdf() {
+				this.date = ""
+				this.time_sd = ""
+			}
+		},
+		mounted() {},
 	}
 </script>
+
+
 
 <style>
 	.dsf_jh_s {
