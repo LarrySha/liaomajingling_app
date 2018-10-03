@@ -1,0 +1,7 @@
+<import src="/dx_unp/liaomatou.vue.wxml" /><template name="1c749f52"><view class="_view data-v-ecc75428"><template data="{{...$root[$kk+'0'], $root}}" is="436b06e4"></template> <view class="_view data-v-ecc75428 fz32 z3 cen mt40  ">
+			  {{sd.title}}
+		</view> <view class="_view data-v-ecc75428 pd pt20 pm20 dfdsf_jh_drt" wx:for="{{content_l}}" wx:for-index="idx" wx:for-item="item"><view class="_view data-v-ecc75428 btm pt20 pm20"><view class="_view data-v-ecc75428 fz26 z9">
+				     {{item.timedf}}
+				</view> <view class="_view data-v-ecc75428 fz30 z6 mt20"><text selectable="true" class="_text data-v-ecc75428 dsf_jh_deerty">{{item.content}}</text> <image src="{{sf_e}}" class="_image data-v-ecc75428 topi_sd mt20" mode="widthFix" wx:for="{{item.imgder}}" wx:for-index="idxe" wx:for-item="sf_e"></image></view></view></view> <view class="_view data-v-ecc75428 fz32 z6 cen mt40 pm40 btm pt20">
+			料码
+			<view class="_view data-v-ecc75428  fz26">资源扫码工具，帮你提高效率</view></view></view></template>

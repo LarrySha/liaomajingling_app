@@ -1,0 +1,13 @@
+@import "../../common/vendor.wxss";
+
+.dfg_jh_dert.data-v-76a40faa {
+  width: 60rpx;
+  height: 60rpx;
+}
+.dsf_jh_deert.data-v-76a40faa {
+  width: 50%;
+  float: left;
+}
+.df_jh_deert.data-v-76a40faa {
+  line-height: 60rpx;
+}

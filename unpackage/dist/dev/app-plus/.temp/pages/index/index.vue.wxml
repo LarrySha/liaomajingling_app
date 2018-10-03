@@ -1,122 +1,125 @@
-<template name="345bc034">
-  <view class="_view data-v-7d7af016 content">
-    <view class="_view data-v-7d7af016 cen df_jh_drt">
-      <image src="../../static/img/logo.png" class="_image data-v-7d7af016 logo_dert"></image>
-      <view class="_view data-v-7d7af016 fz26 z9">资源扫码工具</view>
-    </view>
-    <view class="_view data-v-7d7af016 mt20 pd">
-      <view class="_view data-v-7d7af016">
-        <text class="_text data-v-7d7af016 bgzhu dsf_jh_s yj"></text>
-        <text class="_text data-v-7d7af016 fz30 ml10">标题</text>
+<import src="/dx_unp/liaomatou.vue.wxml" />
+<template name="a6d4be72">
+  <view class="_view data-v-1422dcdc content">
+    <template data="{{...$root[$kk+'0'], $root}}" is="436b06e4"></template>
+    <view class="_view data-v-1422dcdc mt20 pd">
+      <view class="_view data-v-1422dcdc">
+        <text class="_text data-v-1422dcdc bgzhu dsf_jh_s yj"></text>
+        <text class="_text data-v-1422dcdc fz30 ml10">标题</text>
       </view>
-      <view class="_view data-v-7d7af016 mt20">
-        <input class="_input data-v-7d7af016 sd_deert" />
+      <view class="_view data-v-1422dcdc mt20">
+        <input class="_input data-v-1422dcdc sd_deert" value="{{form.title}}" bindinput="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" />
       </view>
-      <view class="_view data-v-7d7af016 mt30">
-        <text class="_text data-v-7d7af016 fz30 ">简介</text>
-        <text class="_text data-v-7d7af016 fz26 red">(可不填)</text>
+      <view class="_view data-v-1422dcdc mt30">
+        <text class="_text data-v-1422dcdc fz30 ">简介</text>
+        <text class="_text data-v-1422dcdc fz26 red">(可不填)</text>
       </view>
-      <view class="_view data-v-7d7af016 mt20">
-        <textarea class="_textarea data-v-7d7af016 sd_deert ab" maxlength="46" />
+      <view class="_view data-v-1422dcdc mt20">
+        <textarea class="_textarea data-v-1422dcdc sd_deert ab" maxlength="46" value="{{form.introduce}}" bindinput="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}" />
       </view>
-      <view class="_view data-v-7d7af016 mt30">
-        <text class="_text data-v-7d7af016 bgzhu dsf_jh_s yj"></text>
-        <text class="_text data-v-7d7af016 fz30 ml10">料</text>
+      <view class="_view data-v-1422dcdc mt30">
+        <text class="_text data-v-1422dcdc bgzhu dsf_jh_s yj"></text>
+        <text class="_text data-v-1422dcdc fz30 ml10">料</text>
       </view>
-      <view class="_view data-v-7d7af016 mt20">
-        <view class="_view data-v-7d7af016 pr sd_jh_eeer" wx:if="{{liao_sd_a}}">
-          <icon type="clear" class="_icon data-v-7d7af016 clse_dseert" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}"></icon>
-          <textarea class="_textarea data-v-7d7af016 br" />
+      <view class="_view data-v-1422dcdc mt20">
+        <view class="_view data-v-1422dcdc pr sd_jh_eeer" wx:if="{{liao_sd_a}}">
+          <icon type="clear" class="_icon data-v-1422dcdc clse_dseert" bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}"></icon>
+          <textarea class="_textarea data-v-1422dcdc br" value="{{form.content }}" bindinput="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}" />
         </view>
-        <view class="_view data-v-7d7af016 pr" wx:if="{{false}}">
-          <view class="_view data-v-7d7af016 add_sertx ab cz">
-            <image src="../../static/img/add_icon.png" class="_image data-v-7d7af016 cz"></image>
+        <view class="_view data-v-1422dcdc pr" wx:if="{{s_kj_der.length>0}}">
+          <view class="_view data-v-1422dcdc add_sertx pr cz" wx:for="{{s_kj_der}}" wx:for-index="idx" wx:for-item="sd">
+            <icon type="clear" class="_icon data-v-1422dcdc clse_dseert" bindtap="handleProxy" data-eventid="{{'4-'+idx}}" data-comkey="{{$k}}"></icon>
+            <image src="{{sd}}" bindtap="handleProxy" data-eventid="{{'5-'+idx}}" data-comkey="{{$k}}" class="_image data-v-1422dcdc"></image>
+          </view>
+          <view class="_view data-v-1422dcdc add_sertx ab cz" bindtap="handleProxy" data-eventid="{{'6'}}" data-comkey="{{$k}}">
+            <image src="../../static/img/add_icon.png" class="_image data-v-1422dcdc cz"></image>
           </view>
         </view>
-        <view class="_view data-v-7d7af016 sd_h_deeret" wx:if="{{!liao_sd_a}}" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">
-          <view class="_view data-v-7d7af016 yj4 br df_jh_deert">
-            <image src="../../static/img/qianbi.png" class="_image data-v-7d7af016 qianbieer cz"></image>
+        <view class="_view data-v-1422dcdc sd_h_deeret" wx:if="{{!liao_sd_a}}" bindtap="handleProxy" data-eventid="{{'7'}}" data-comkey="{{$k}}">
+          <view class="_view data-v-1422dcdc yj4 br df_jh_deert">
+            <image src="../../static/img/qianbi.png" class="_image data-v-1422dcdc qianbieer cz"></image>
           </view>
-          <view class="_view data-v-7d7af016 z9 fz26 mt10">文字</view>
+          <view class="_view data-v-1422dcdc z9 fz26 mt10">文字</view>
         </view>
-        <view class="_view data-v-7d7af016 sd_h_deeret">
-          <view class="_view data-v-7d7af016 yj4 br df_jh_deert">
-            <image src="../../static/img/tupian.png" class="_image data-v-7d7af016 qianbieer cz"></image>
+        <view class="_view data-v-1422dcdc sd_h_deeret" bindtap="handleProxy" wx:if="{{s_kj_der.length<=0}}" data-eventid="{{'8'}}" data-comkey="{{$k}}">
+          <view class="_view data-v-1422dcdc yj4 br df_jh_deert">
+            <image src="../../static/img/tupian.png" class="_image data-v-1422dcdc qianbieer cz"></image>
           </view>
-          <view class="_view data-v-7d7af016 z9 fz26 mt10">图片</view>
+          <view class="_view data-v-1422dcdc z9 fz26 mt10">图片</view>
         </view>
-        <view class="_view data-v-7d7af016 qc"></view>
-      </view>
-    </view>
-    <view class="_view data-v-7d7af016 pl20">
-      <view class="_view data-v-7d7af016 mt30">
-        <text class="_text data-v-7d7af016 bgzhu dsf_jh_s yj"></text>
-        <text class="_text data-v-7d7af016 fz30 ml10">定价(元)</text>
-      </view>
-      <view class="_view data-v-7d7af016 d_jh_deeert pr20" bindtap="handleProxy" data-eventid="{{'2-'+index}}" data-comkey="{{$k}}" wx:for="{{dingjia}}" wx:for-index="index" wx:for-item="sd">
-        <view class="_view data-v-7d7af016 br   {{sd.cls}}">{{sd.name}}</view>
-      </view>
-      <view class="_view data-v-7d7af016 qc"></view>
-      <view class="_view data-v-7d7af016 mt20 pr20">
-        <input class="_input data-v-7d7af016 sd_deert" placeholder="自定义金额" value="{{jiner}}" bindinput="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}" />
+        <view class="_view data-v-1422dcdc qc"></view>
       </view>
     </view>
-    <view class="_view data-v-7d7af016 pd dsf_jh_deert mt20">
-      <view class="_view data-v-7d7af016  pt20 pm20 bbm">
-        <text class="_text data-v-7d7af016 fz30 ">其他功能</text>
-        <text class="_text data-v-7d7af016 fz26 red">(非必填)</text>
+    <view class="_view data-v-1422dcdc pl20">
+      <view class="_view data-v-1422dcdc mt30">
+        <text class="_text data-v-1422dcdc bgzhu dsf_jh_s yj"></text>
+        <text class="_text data-v-1422dcdc fz30 ml10">定价(元)</text>
       </view>
-      <view class="_view data-v-7d7af016 pd">
-        <view class="_view data-v-7d7af016 dsfdsf_deet fz30 pr bbm">
-          <view bindtap="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}" class="_view data-v-7d7af016"> 过期时间
-            <image src="../../static/img/down.png" class="_image data-v-7d7af016 down_deert"></image>
+      <view class="_view data-v-1422dcdc d_jh_deeert pr20" bindtap="handleProxy" data-eventid="{{'9-'+index}}" data-comkey="{{$k}}" wx:for="{{dingjia}}" wx:for-index="index" wx:for-item="sd">
+        <view class="_view data-v-1422dcdc br   {{sd.cls}}">{{sd.name}}</view>
+      </view>
+      <view class="_view data-v-1422dcdc qc"></view>
+      <view class="_view data-v-1422dcdc mt20 pr20">
+        <input class="_input data-v-1422dcdc sd_deert" placeholder="自定义金额" value="{{form.price}}" bindinput="handleProxy" data-eventid="{{'10'}}" data-comkey="{{$k}}" />
+      </view>
+    </view>
+    <view class="_view data-v-1422dcdc pd dsf_jh_deert mt20">
+      <view class="_view data-v-1422dcdc  pt20 pm20 bbm">
+        <text class="_text data-v-1422dcdc fz30 ">其他功能</text>
+        <text class="_text data-v-1422dcdc fz26 red">(非必填)</text>
+      </view>
+      <view class="_view data-v-1422dcdc pd">
+        <view class="_view data-v-1422dcdc dsfdsf_deet fz30 pr bbm">
+          <view bindtap="handleProxy" data-eventid="{{'11'}}" data-comkey="{{$k}}" class="_view data-v-1422dcdc"> 过期时间
+            <image src="../../static/img/down.png" class="_image data-v-1422dcdc down_deert"></image>
           </view>
-          <view class="_view data-v-7d7af016 mt20" wx:if="{{is_sdf_a}}">
-            <view class="_view data-v-7d7af016 red fz26 pm20">所选时间为稿件下架时间，此时段以后将不能被购买 </view>
-            <view class="_view data-v-7d7af016 sd_jh_dert fl">
-              <picker mode="date" start="2018-01-01" end="2019-01-01" bindchange="handleProxy" class="_picker data-v-7d7af016 br dsf_dert fz26" data-eventid="{{'5'}}" data-comkey="{{$k}}">
-                <view class="_view data-v-7d7af016 picker"> {{date||'请选日期'}} </view>
+          <view class="_view data-v-1422dcdc mt20" wx:if="{{is_sdf_a}}">
+            <view class="_view data-v-1422dcdc red fz26 pm20">所选时间为稿件下架时间，此时段以后将不能被购买 </view>
+            <view class="_view data-v-1422dcdc sd_jh_dert fl">
+              <picker mode="date" start="2018-01-01" end="2019-01-01" bindchange="handleProxy" class="_picker data-v-1422dcdc br dsf_dert fz26" data-eventid="{{'12'}}" data-comkey="{{$k}}">
+                <view class="_view data-v-1422dcdc picker"> {{date||'请选日期'}} </view>
               </picker>
-              <picker mode="time" bindchange="handleProxy" class="_picker data-v-7d7af016 br dsf_dert fz26 ab" data-eventid="{{'6'}}" data-comkey="{{$k}}">
-                <view class="_view data-v-7d7af016 picker"> {{time_sd||'请选择时间'}} </view>
+              <picker mode="time" bindchange="handleProxy" class="_picker data-v-1422dcdc br dsf_dert fz26 ab" data-eventid="{{'13'}}" data-comkey="{{$k}}">
+                <view class="_view data-v-1422dcdc picker"> {{time_sd||'请选择时间'}} </view>
               </picker>
             </view>
-            <view class="_view data-v-7d7af016 ov">
-              <text class="_text data-v-7d7af016 qingkong_de" bindtap="handleProxy" data-eventid="{{'7'}}" data-comkey="{{$k}}">清空</text>
+            <view class="_view data-v-1422dcdc ov">
+              <text class="_text data-v-1422dcdc qingkong_de" bindtap="handleProxy" data-eventid="{{'14'}}" data-comkey="{{$k}}">清空</text>
             </view>
-            <view class="_view data-v-7d7af016 qc"></view>
+            <view class="_view data-v-1422dcdc qc"></view>
           </view>
         </view>
-        <view class="_view data-v-7d7af016 dsfdsf_deet fz30 pr bbm">
-          <view bindtap="handleProxy" data-eventid="{{'8'}}" data-comkey="{{$k}}" class="_view data-v-7d7af016"> 是否退款
-            <image src="../../static/img/down.png" class="_image data-v-7d7af016 down_deert"></image>
+        <view class="_view data-v-1422dcdc dsfdsf_deet fz30 pr bbm">
+          <view bindtap="handleProxy" data-eventid="{{'15'}}" data-comkey="{{$k}}" class="_view data-v-1422dcdc"> 是否退款
+            <image src="../../static/img/down.png" class="_image data-v-1422dcdc down_deert"></image>
           </view>
-          <view class="_view data-v-7d7af016 mt20" wx:if="{{is_sdf_b}}">
-            <view class="_view data-v-7d7af016 red fz26 pm20">选中退款将会有一键退款的功能 </view>
-            <view bindtap="gu_seert" class="_view data-v-7d7af016">
-              <view class="_view data-v-7d7af016 df_erttyxc cz">
-                <label class="_label data-v-7d7af016 checkbox">
-                  <checkbox value="{{is_tui.name}}" checked="{{is_tui.checked}}" class="_checkbox data-v-7d7af016"></checkbox>{{is_tui.value}} </label>
+          <view class="_view data-v-1422dcdc mt20" wx:if="{{is_sdf_b}}">
+            <view class="_view data-v-1422dcdc red fz26 pm20">选中退款将会有一键退款的功能 </view>
+            <view bindtap="gu_seert" class="_view data-v-1422dcdc">
+              <view class="_view data-v-1422dcdc df_erttyxc cz" bindtap="handleProxy" data-eventid="{{'16'}}" data-comkey="{{$k}}">
+                <text class="_text data-v-1422dcdc ssd_drrrtt cz" wx:if="{{form.is_refund ==0}}"></text>
+                <icon type="success" size="22" class="_icon data-v-1422dcdc cz" wx:else></icon>
+                <text class="_text data-v-1422dcdc cz">是否退款</text>
               </view>
             </view>
           </view>
         </view>
-        <view class="_view data-v-7d7af016 dsfdsf_deet fz30 pr bbm">
-          <view bindtap="handleProxy" data-eventid="{{'9'}}" data-comkey="{{$k}}" class="_view data-v-7d7af016"> 选择模板
-            <image src="../../static/img/down.png" class="_image data-v-7d7af016 down_deert"></image>
+        <view class="_view data-v-1422dcdc dsfdsf_deet fz30 pr bbm">
+          <view bindtap="handleProxy" data-eventid="{{'17'}}" data-comkey="{{$k}}" class="_view data-v-1422dcdc"> 选择模板
+            <image src="../../static/img/down.png" class="_image data-v-1422dcdc down_deert"></image>
           </view>
-          <view class="_view data-v-7d7af016 pt20" wx:if="{{is_sdf_c}}">
-            <view class="_view data-v-7d7af016 red fz26 pm20 ">点击图片选择料码模版 </view>
-            <view class="_view data-v-7d7af016">
-              <image src="/static/img/1.png" class="_image data-v-7d7af016 usdd_dseert" bindtap="xzmb_erert"></image>
+          <view class="_view data-v-1422dcdc pt20" wx:if="{{is_sdf_c}}">
+            <view class="_view data-v-1422dcdc red fz26 pm20 ">点击图片选择料码模版 </view>
+            <view class="_view data-v-1422dcdc">
+              <image src="{{'../../static/img/'+moban_ds+'.png'}}" class="_image data-v-1422dcdc usdd_dseert" bindtap="handleProxy" data-eventid="{{'18'}}" data-comkey="{{$k}}"></image>
             </view>
           </view>
         </view>
       </view>
     </view>
-    <view class="_view data-v-7d7af016 qc"></view>
-    <view class="_view data-v-7d7af016 pd pm40">
-      <view class="_view data-v-7d7af016 shengcsd_sewr " bindtap="sclm_ddrt"> 生成料码 </view>
+    <view class="_view data-v-1422dcdc qc"></view>
+    <view class="_view data-v-1422dcdc pd pm40">
+      <view class="_view data-v-1422dcdc shengcsd_sewr " bindtap="handleProxy" data-eventid="{{'19'}}" data-comkey="{{$k}}"> 生成料码 </view>
     </view>
   </view>
 </template>

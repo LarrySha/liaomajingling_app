@@ -1,7 +1,7 @@
-<template name="78586c9a">
-  <view class="_view data-v-0d3c3136 content">
-    <navigator url="/pages/index/index" open-type="switchTab" class="_navigator data-v-0d3c3136">
-      <image src="../../static/img/qidongtu.jpg" class="_image data-v-0d3c3136 dsfdfrtrty"></image>
+<template name="0abe68ce">
+  <view class="_view data-v-7b804cc4 content">
+    <navigator bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_navigator data-v-7b804cc4">
+      <image src="../../static/img/qidongtu.jpg" class="_image data-v-7b804cc4 dsfdfrtrty"></image>
     </navigator>
   </view>
 </template>

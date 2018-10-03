@@ -1,3 +1,4 @@
+@import "../../common/vendor.wxss";
 
 .sfdf_dfert {
   padding: 0px;

@@ -1,0 +1,31 @@
+<template name="241bed83">
+  <view class="_view data-v-7c573d3c">
+    <view class="_view data-v-7c573d3c pd pt20">
+      <image src="../../static/img/1.png" class="_image data-v-7c573d3c w100 topi_sd"></image>
+      <navigator class="_navigator data-v-7c573d3c caha_ddfr yj4 br mt60" url="/pages/xiangqing/xiangqing"> 查看详情 </navigator>
+      <view class="_view data-v-7c573d3c caha_ddfr yj4 br mt30" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}"> 保存到相册 </view>
+      <view class="_view data-v-7c573d3c caha_ddfr yj4 br mt30"> 一键通知
+        <text class="_text data-v-7c573d3c fz26 red">(关注您的粉丝收到消息推送)</text>
+      </view>
+      <navigator url="/pages/zuijia/zuijia" class="_navigator data-v-7c573d3c caha_ddfr yj4 br mt30"> 追加内容
+        <text class="_text data-v-7c573d3c fz26 red">(购买过的用户收到消息推送)</text>
+      </navigator>
+      <view class="_view data-v-7c573d3c caha_ddfr yj4 br mt30 df_Jh_df_det"> 一键退款 </view>
+      <view class="_view data-v-7c573d3c caha_ddfr yj4 br mt30 df_Jh_df_det"> 关闭 </view>
+      <view class="_view data-v-7c573d3c mt60">
+        <view class="_view data-v-7c573d3c pt20 pm20 fz26"> 收益总额
+          <text class="_text data-v-7c573d3c red">10</text>元
+          <view class="_view data-v-7c573d3c fr"> 已售
+            <text class="_text data-v-7c573d3c red">10</text>份 </view>
+          <view class="_view data-v-7c573d3c qc"></view>
+        </view>
+      </view>
+    </view>
+    <view class="_view data-v-7c573d3c btm pd pt20 pm20 fz30 pr" wx:for="{{5}}" wx:for-index="index" wx:for-item="sd">
+      <image src="../../static/img/1.png" class="_image data-v-7c573d3c yj topi_sd_deer cz"></image>
+      <text class="_text data-v-7c573d3c ml10">姓名</text>
+      <image src="../../static/img/yituikuan.png" class="_image data-v-7c573d3c yituikuan_der"></image>
+      <view class="_view data-v-7c573d3c fr fz26 z9">哈哈</view>
+    </view>
+  </view>
+</template>

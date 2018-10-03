@@ -1,0 +1,11 @@
+@import "../../common/vendor.wxss";
+
+.DSf_dsf_drrt.data-v-93a5a614 {
+  height: 55rpx;
+}
+.lajixiang.data-v-93a5a614 {
+  width: 36rpx;
+  height: 36rpx;
+  position: relative;
+  top: 20rpx;
+}

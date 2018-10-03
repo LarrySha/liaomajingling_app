@@ -1,0 +1,12 @@
+
+.kh_sedert.data-v-3663e0a8 {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: auto;
+  margin-top: 40px;
+  background: #E3E3E3;
+  text-align: center;
+  line-height: 120px;
+  padding-top: 10px;
+}

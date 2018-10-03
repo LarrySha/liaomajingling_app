@@ -1,0 +1,1 @@
+<import src="/pages/xzmb/xzmb.vue.wxml" /><template is="4bb3100a" data="{{ ...$root['0'], $root }}"/>

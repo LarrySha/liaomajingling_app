@@ -1,14 +1,32 @@
 <script>
+	import base from "common/base.js"
+
 	export default {
 		onLaunch: function() {
-			console.log('App Launch')
+			console.log(uni.getStorageSync('get_key'))
+			if (!uni.getStorageSync('get_key')) {
+				base.ajax("a_get_key", '', function(data) {
+					let jiemi = data.data
+					console.log(jiemi)
+					uni.setStorageSync('get_key', base.Decrypt(jiemi));
+				})
+			} else { 
+
+
+			}
+
+
 		},
 		onShow: function() {
-			console.log('App Show')
+
 		},
 		onHide: function() {
-			console.log('App Hide')
-		}
+
+		},
+		mounted() {
+
+
+		},
 	}
 </script>
 
@@ -44,7 +62,7 @@
 		border-radius: 0 0 50% 50%/0 0 20% 20%;
 	}
 
-	.logo_dert { 
+	.logo_dert {
 		width: 70rpx;
 		height: 70rpx;
 	}

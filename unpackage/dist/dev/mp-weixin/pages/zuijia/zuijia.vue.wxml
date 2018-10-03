@@ -1,0 +1,47 @@
+<import src="/dx_unp/liaomatou.vue.wxml" />
+<template name="146a3b77">
+  <view class="_view data-v-05a4c814">
+    <template data="{{...$root[$kk+'0'], $root}}" is="5cc7e588"></template>
+    <view class="_view data-v-05a4c814 mt20 pd">
+      <view class="_view data-v-05a4c814">
+        <text class="_text data-v-05a4c814 bgzhu dsf_jh_s yj"></text>
+        <text class="_text data-v-05a4c814 fz30 ml10">标题</text>
+        <text class="_text data-v-05a4c814 red fz24 ml5">(不可改)</text>
+      </view>
+      <view class="_view data-v-05a4c814 mt20">
+        <input class="_input data-v-05a4c814 sd_deert" disabled="true" />
+      </view>
+      <view class="_view data-v-05a4c814 mt30">
+        <text class="_text data-v-05a4c814 bgzhu dsf_jh_s yj"></text>
+        <text class="_text data-v-05a4c814 fz30 ml10">料</text>
+      </view>
+      <view class="_view data-v-05a4c814 mt20">
+        <view class="_view data-v-05a4c814 pr sd_jh_eeer" wx:if="{{liao_sd_a}}">
+          <icon type="clear" class="_icon data-v-05a4c814 clse_dseert" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}"></icon>
+          <textarea class="_textarea data-v-05a4c814 br" />
+        </view>
+        <view class="_view data-v-05a4c814 pr" wx:if="{{false}}">
+          <view class="_view data-v-05a4c814 add_sertx ab cz">
+            <image src="../../static/img/add_icon.png" class="_image data-v-05a4c814 cz"></image>
+          </view>
+        </view>
+        <view class="_view data-v-05a4c814 sd_h_deeret" wx:if="{{!liao_sd_a}}" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">
+          <view class="_view data-v-05a4c814 yj4 br df_jh_deert">
+            <image src="../../static/img/qianbi.png" class="_image data-v-05a4c814 qianbieer cz"></image>
+          </view>
+          <view class="_view data-v-05a4c814 z9 fz26 mt10">文字</view>
+        </view>
+        <view class="_view data-v-05a4c814 sd_h_deeret">
+          <view class="_view data-v-05a4c814 yj4 br df_jh_deert">
+            <image src="../../static/img/tupian.png" class="_image data-v-05a4c814 qianbieer cz"></image>
+          </view>
+          <view class="_view data-v-05a4c814 z9 fz26 mt10">图片</view>
+        </view>
+        <view class="_view data-v-05a4c814 qc"></view>
+      </view>
+    </view>
+    <view class="_view data-v-05a4c814 btm mt40 pd">
+      <view class="_view data-v-05a4c814 shengcsd_sewr "> 确认追加 </view>
+    </view>
+  </view>
+</template>

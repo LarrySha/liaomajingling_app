@@ -1,0 +1,12 @@
+<template name="3241f56e">
+  <view class="_view data-v-61fe18ea">
+    <view class="_view data-v-61fe18ea pd pt20 pm20 bbm" wx:for="{{20}}" wx:for-index="index" wx:for-item="sd">
+      <view class="_view data-v-61fe18ea dsf_jh_deert dian">
+        <image src="../../static/img/1.png" class="_image data-v-61fe18ea yj dfg_jh_dert cz"></image>
+        <text class="_text data-v-61fe18ea fz32 z3 ml10">名字</text>
+      </view>
+      <view class="_view data-v-61fe18ea ov fz26 z9 df_jh_deert dian tr"> 2018-09-30 17:02:24 </view>
+      <view class="_view data-v-61fe18ea qc"></view>
+    </view>
+  </view>
+</template>

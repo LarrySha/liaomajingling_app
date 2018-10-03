@@ -2,17 +2,16 @@
 <template>
 	<view>
 
-
-		<view class='pd pt20 pm20 bbm'>
+		<view class='pd pt20 pm20 bbm' v-for="(item,idx) in sd_kis">
 			<view class='dsf_jh_deert dian'>
-				<image src='../../static/img/1.png' class='yj dfg_jh_dert cz'></image>
-				<text class='fz32 z3 ml10'>名字</text>
+				<image :src='item.head_img' class='yj dfg_jh_dert cz'></image>
+				<text class='fz32 z3 ml10'>{{item.nick_name}}</text>
 			</view>
 			<view class='ov fz26 z9 df_jh_deert dian tr'>
-				2018-09-30 17:04:46
+				{{item.timedf}}
 
-				<view class=' tr'>
-					<image src='../../static/img/lajixiang.png' class='lajixiang' @click="delect"></image>
+				<view class=' tr' @click='delect_er(item,idx)'>
+					<image src='../../static/img/lajixiang.png' class='lajixiang'></image>
 				</view>
 
 
@@ -24,36 +23,83 @@
 		</view>
 
 
-		<kongbai v-if="false"></kongbai>
+
+		<view class='btm pt20 fz26 pm20 z9 cen' v-if="!is_dsrt&&sd_kis.length>=10">
+			加载中...
+		</view>
+
+		<view class='btm pt20 fz26 pm20 z9 cen' v-if="is_dsrt&&sd_kis.length>=10">
+			已加载全部数据
+		</view>
+
+
+		<kongbai v-if="sd_kis.length<10"></kongbai>
 	</view>
 </template>
 <script>
 	import kongbai from "../../dx_unp/kongbai.vue"
+	import base from "../../common/base.js"
+
 	export default {
 		data() {
 			return {
-
+				pageNo: 1,
+				sd_kis: [],
+				is_dsrt: false
 			}
 		},
 		components: {
 			kongbai
 		},
-		methods: {
-			delect() {
-				uni.showModal({
-					title: '提示',
-					content: '确定删除？',
-					success: function(res) {
-						if (res.confirm) {
-							console.log('用户点击确定');
-						} else if (res.cancel) {
-							console.log('用户点击取消');
-						}
-					}
-				});
+
+		onLoad: function(options) {
+			this.get_mx()
+		},
+		onReachBottom: function() {
+			if (!this.is_dsrt) {
+				++this.pageNo
+				this.get_mx()
 			}
 		},
-		mounted() {},
+		methods: {
+			get_mx() {
+				let x_get_transfer_list = {},
+					th = this
+
+				x_get_transfer_list.pageNo = this.pageNo.toString()
+				base.ajax("a_get_attention_list", x_get_transfer_list, function(data) {
+					data.data.map(a => {
+						a.timedf = base.time_er(a.create_time)
+						th.sd_kis.push(a)
+					})
+					if (data.data.length < 10) {
+						th.is_dsrt = true
+					}
+
+				})
+			},
+			delect_er(sd, idx) {
+				var id_r = sd.id,
+					th = this
+				wx.showModal({
+					title: '提示',
+					content: '确定取消关注',
+					success: function(res) {
+						if (res.confirm) {
+							var x_remove_attention = {}
+							x_remove_attention.id = id_r
+							base.ajax("a_remove_attention", x_remove_attention, function(data) {
+								th.sd_kis.splice(idx, 1);
+
+							})
+						}
+					}
+				})
+			}
+
+
+		},
+
 	}
 </script>
 <style scoped>

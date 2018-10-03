@@ -1,0 +1,10 @@
+<import src="/dx_unp/kongbai.vue.wxml" /><template name="23dee924"><view class="_view data-v-10904583"><view class="_view data-v-10904583 pd pt20 pm20 bbm" wx:for="{{sd_kis}}" wx:for-index="index" wx:for-item="item"><view class="_view data-v-10904583 fl fg_jh_df dian fz26 z9 ">
+			{{item.timedf}}
+		</view> <view class="_view data-v-10904583 fl fg_jh_df dian fz26 z9 tr "><image src="{{item.head_img}}" class="_image data-v-10904583 dsf_kh_det yj cz"></image> <text class="_text data-v-10904583 fz26 z3 ml10">{{item.nick_name}}</text></view> <view class="_view data-v-10904583 qc pt10"></view> <view class="_view data-v-10904583 fl fg_jh_df dian fz26 z6 ">
+			{{item.title}}
+		</view> <view class="_view data-v-10904583 fl fg_jh_df dian fz26 z6  tr"><text class="_text data-v-10904583 red">{{item.amount}}</text>元
+		</view> <view class="_view data-v-10904583 qc"></view></view> <view class="_view data-v-10904583 btm pt20 fz26 pm20 z9 cen" wx:if="{{!is_dsrt&&sd_kis.length>=10}}">
+			加载中...
+		</view> <view class="_view data-v-10904583 btm pt20 fz26 pm20 z9 cen" wx:if="{{is_dsrt&&sd_kis.length>=10}}">
+			已加载全部数据
+		</view> <template wx:if="{{sd_kis.length<10}}" data="{{...$root[$kk+'0'], $root}}" is="7947c194"></template></view></template>

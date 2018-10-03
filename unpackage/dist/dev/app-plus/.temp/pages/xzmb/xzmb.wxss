@@ -1,0 +1,15 @@
+@import "../../common/vendor.wxss";
+
+.dsf_jh_deert.data-v-1dc9d554 {
+  width: 50%;
+  float: left;
+}
+.w_derrrtyx.data-v-1dc9d554 {
+  width: 100%;
+  height: 340rpx;
+}
+.sd_jh_deertt.data-v-1dc9d554 {
+  position: absolute;
+  right: 30rpx;
+  top: 10rpx;
+}

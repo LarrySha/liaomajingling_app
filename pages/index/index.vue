@@ -1,11 +1,7 @@
 <template>
 	<view class="content">
 
-
-		<view class="cen df_jh_drt">
-			<image src="../../static/img/logo.png" class="logo_dert"></image>
-			<view class="fz26 z9">资源扫码工具</view>
-		</view>
+		<liaomatou></liaomatou>
 
 
 		<view class="mt20 pd">
@@ -15,7 +11,7 @@
 			</view>
 
 			<view class="mt20">
-				<input class="sd_deert"></input>
+				<input class="sd_deert" v-model="form.title"></input>
 			</view>
 
 			<view class="mt30">
@@ -24,7 +20,7 @@
 			</view>
 
 			<view class="mt20">
-				<textarea class='sd_deert ab' maxlength="46"></textarea>
+				<textarea class='sd_deert ab' maxlength="46" v-model="form.introduce"></textarea>
 			</view>
 
 
@@ -37,18 +33,18 @@
 
 				<view class='pr sd_jh_eeer' v-if="liao_sd_a">
 					<icon type='clear' class="clse_dseert" @click="liao_sd_a=false"></icon>
-					<textarea class='br'></textarea>
+					<textarea class='br' v-model="form.content "></textarea>
 				</view>
 
 
 
-				<view class='pr' v-if="false">
-					<!--     <view class='add_sertx pr cz' >
-        <icon type='clear' class="clse_dseert" catchtap='dsf_derty' data-idx="{{index}}"></icon>
-        <image src="{{item}}"></image>
-      </view> -->
+				<view class='pr' v-if="s_kj_der.length>0">
+					<view class='add_sertx pr cz' v-for="(sd,idx) in s_kj_der">
+						<icon type='clear' class="clse_dseert" @click='dsf_derty(idx)'></icon>
+						<image :src="sd" @click="lltu(sd)"></image>
+					</view>
 
-					<view class='add_sertx ab cz'>
+					<view class='add_sertx ab cz' @click="shg_deert">
 						<image src='../../static/img/add_icon.png' class="cz"></image>
 					</view>
 
@@ -70,7 +66,7 @@
 
 
 
-				<view class="sd_h_deeret">
+				<view class="sd_h_deeret" @click="shg_deert" v-if="s_kj_der.length<=0">
 
 					<view class='yj4 br df_jh_deert'>
 						<image src='../../static/img/tupian.png' class='qianbieer cz'></image>
@@ -107,7 +103,7 @@
 			<view class='qc'></view>
 
 			<view class="mt20 pr20">
-				<input class="sd_deert" placeholder='自定义金额' v-model="jiner"></input>
+				<input class="sd_deert" placeholder='自定义金额' v-model="form.price"></input>
 			</view>
 
 
@@ -181,11 +177,14 @@
 					<view class='mt20' v-if="is_sdf_b">
 						<view class='red fz26 pm20'>选中退款将会有一键退款的功能 </view>
 						<view bindtap='gu_seert'>
-							<view class='df_erttyxc cz'>
+							<view class='df_erttyxc cz' @click="form.is_refund==0?form.is_refund=1:form.is_refund=0">
 
-								<label class="checkbox">
-									<checkbox :value="is_tui.name" :checked="is_tui.checked" />{{is_tui.value}}
-								</label>
+
+								<text class="ssd_drrrtt cz" v-if="form.is_refund ==0"></text>
+								<icon type="success" size="22" class="cz" v-else />
+								<text class="cz">是否退款</text>
+
+
 
 
 
@@ -208,12 +207,13 @@
 					<view class='pt20' v-if="is_sdf_c">
 						<view class='red fz26 pm20 '>点击图片选择料码模版 </view>
 						<view>
-							<image src='/static/img/1.png' class="usdd_dseert" bindtap='xzmb_erert'></image>
+							<image :src="'../../static/img/'+moban_ds+'.png'" class="usdd_dseert" @click='xzmb_erert'></image>
+
 						</view>
 					</view>
 
 
-
+					<!-- moban_ds -->
 
 				</view>
 
@@ -227,7 +227,7 @@
 
 		<view class='qc'></view>
 		<view class='pd pm40'>
-			<view class='shengcsd_sewr ' bindtap='sclm_ddrt'>
+			<view class='shengcsd_sewr ' @click='sclm_ddrt'>
 				生成料码
 			</view>
 		</view>
@@ -241,6 +241,7 @@
 </template>
 
 <script>
+	import base from "../../common/base.js"
 	export default {
 		data: {
 			title: 'Hello',
@@ -252,11 +253,19 @@
 			is_sdf_c: false,
 			liao_sd_a: false,
 			liao_sd_b: false,
-			is_tui: {
-				name: 'shifou',
-				value: '是否退款',
-				checked: 'true'
+			moban_ds: 9,
+			form: {
+				title: "", //标题
+				introduce: "", //简介
+				content: "", //内容
+				img: "", //内容图片，和内容至少填一个
+				price: 0, //价格（元）
+				color_s: "", // 二维码上半色
+				color_x: "", //二维码下半色
+				is_refund: 0, //是否退款0不退款1有退款
+				expire_time_str: "" //过期时间（非必填）
 			},
+
 			dingjia: [{
 				name: "免费",
 				num: 0,
@@ -289,16 +298,70 @@
 				name: "188元",
 				num: 188,
 				cls: ""
-			}]
+			}],
+			s_kj_der: [],
+			img: []
+
 		},
 		components: {},
+		onShow: function(e) {
+			if (uni.getStorageSync('id_s')) {
+				var yanse = uni.getStorageSync('yanse')
+				yanse = yanse.split(",")
+				this.moban_ds = uni.getStorageSync('id_s')
+				this.form.color_s = yanse[0]
+				this.form.color_x = yanse[1]
+			}
+
+		},
 		methods: {
+			xzmb_erert() {
+				let th=this 
+				wx.navigateTo({
+					url: '/pages/xzmb/xzmb?id_s=' + th.moban_ds
+				})
+			},
+			sclm_ddrt() { //生成料码
+				if (!this.form.title) {
+					uni.showToast({
+						title: '请输入标题',
+						icon: "none",
+						duration: 2000
+					});
+					return
+				}
+
+				if (!this.form.content && this.img.length <= 0) {
+					uni.showToast({
+						title: '请输入文字或上传图片',
+						icon: 'none',
+						duration: 2000
+					})
+					return
+				}
+
+				this.form.img = this.img.join(",")
+				this.form.expire_time_str = this.date + " " + this.time_sd
+				base.ajax("a_add_resource", this.form, function(data) {
+					uni.redirectTo({
+						url: '/pages/list_de/list_de?type_e=1&code_r=' + data.data
+					})
+				})
+
+
+
+			},
+			checkboxChange(e) {
+
+			},
 			sd_dsf(sd) {
 				this.dingjia.map(a => {
 					a.cls = ""
 				})
 				sd.cls = "act"
 				this.jiner = sd.num
+				this.form.price = sd.num
+				console.log(sd.num)
 			},
 			bindDateChange(evt) {
 				this.date = evt.detail.value;
@@ -309,6 +372,43 @@
 			qingdf() {
 				this.date = ""
 				this.time_sd = ""
+			},
+			shg_deert() { //上传图片
+				let th = this
+				uni.chooseImage({
+					success: function(res) {
+						var login_wer = uni.getStorageSync('token')
+						res.tempFilePaths.map(a => {
+							th.s_kj_der.push(a)
+							uni.uploadFile({
+								url: 'https://lmjl.ttkgou.com/lmjl_core/app/a_img_upload_one', //仅为示例，非真实的接口地址
+								filePath: a,
+								name: 'file',
+								formData: {
+									'token': login_wer
+								},
+								success: function(res) {
+									let sf_ddr = JSON.parse(res.data)
+									th.img.push(sf_ddr.data)
+									console.log(th.img)
+								}
+							})
+						})
+					}
+
+				})
+			},
+			dsf_derty(idx) { //删除图片
+				this.img.splice(idx, 1);
+				this.s_kj_der.splice(idx, 1);
+			},
+
+			lltu(url) {
+				let th = this
+				uni.previewImage({
+					current: url,
+					urls: th.s_kj_der
+				});
 			}
 		},
 		mounted() {},
@@ -501,5 +601,13 @@
 	.dsfdsf_deet {
 		padding-top: 30rpx;
 		padding-bottom: 30rpx;
+	}
+
+	.ssd_drrrtt {
+		border: 1px solid #999;
+		width: 32rpx;
+		height: 32rpx;
+		border-radius: 50%;
+		display: inline-block;
 	}
 </style>

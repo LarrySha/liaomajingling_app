@@ -1,34 +1,78 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/user_center/index",
+			"path": "pages/star/index",
 			"style": {
 
 			}
 		}, {
-			"path": "pages/guanzhu/index",
+			"path": "pages/xieyi/xieyi",
 			"style": {
-				"navigationBarTitleText": "关注列表"
-			}
-		},
 
-		{
+			}
+		}, {
+			"path": "pages/user_center/index",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		}, {
+			"path": "pages/wodeliao/wodeliao",
+			"style": {
+				"navigationBarTitleText": "我的料"
+			}
+		}, {
 			"path": "pages/index/index",
 			"style": {
 
 			}
 		}, {
-			"path": "pages/wodeliao/index",
+			"path": "pages/xzmb/xzmb",
+			"style": {
+
+			}
+		}, {
+			"path": "pages/zuijia/zuijia",
 			"style": {
 
 			}
 		},
 		{
-			"path": "pages/star/index",
+			"path": "pages/xiangqing/xiangqing",
 			"style": {
 
 			}
+		}, {
+			"path": "pages/list_de/list_de",
+			"style": {
+
+			}
+		}, {
+			"path": "pages/mingxi/index",
+			"style": {
+				"navigationBarTitleText": "提现明细"
+			}
+		}, {
+			"path": "pages/zhanghu/index",
+			"style": {
+				"navigationBarTitleText": "收入明细"
+			}
+		},
+
+		{
+			"path": "pages/fensoi/index",
+			"style": {
+				"navigationBarTitleText": "粉丝列表"
+			}
+		},
+		{
+			"path": "pages/guanzhu/index",
+			"style": {
+				"navigationBarTitleText": "关注列表"
+			}
 		}
+
+
+
 	],
 
 	"globalStyle": {
@@ -48,7 +92,7 @@
 			"selectedIconPath": "static/img/bottm/xz_a.png",
 			"text": "首页"
 		}, {
-			"pagePath": "pages/wodeliao/index",
+			"pagePath": "pages/wodeliao/wodeliao",
 			"iconPath": "static/img/bottm/xy.png",
 			"selectedIconPath": "static/img/bottm/xz_b.png",
 			"text": "我的料"

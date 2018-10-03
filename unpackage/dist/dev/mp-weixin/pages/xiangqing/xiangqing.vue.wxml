@@ -1,0 +1,19 @@
+<import src="/dx_unp/liaomatou.vue.wxml" />
+<template name="61e1eb9a">
+  <view class="_view data-v-303d36a8">
+    <template data="{{...$root[$kk+'0'], $root}}" is="5cc7e588"></template>
+    <view class="_view data-v-303d36a8 fz32 z3 cen mt40  "> 标题 </view>
+    <view class="_view data-v-303d36a8 pd pt20 pm20 dfdsf_jh_drt">
+      <view class="_view data-v-303d36a8 btm pt20 pm20">
+        <view class="_view data-v-303d36a8 fz26 z9"> 2018-10-10 10:10:10 </view>
+        <view class="_view data-v-303d36a8 fz30 z6 mt20">
+          <text selectable="true" class="_text data-v-303d36a8 dsf_jh_deerty">内容内容内容内容内容内容</text>
+          <image src="../../static/img/1.png" class="_image data-v-303d36a8 topi_sd mt20" mode="widthFix"></image>
+        </view>
+      </view>
+    </view>
+    <view class="_view data-v-303d36a8 fz32 z6 cen mt40 pm40 btm pt20"> 料码
+      <view class="_view data-v-303d36a8  fz26">资源扫码工具，帮你提高效率</view>
+    </view>
+  </view>
+</template>

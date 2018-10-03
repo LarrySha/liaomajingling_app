@@ -1,0 +1,16 @@
+<template name="df377c9e">
+  <view class="_view data-v-0b835552">
+    <navigator class="_navigator data-v-0b835552 sd_drrttys pd bbm pt20 pm20" wx:for="{{20}}" wx:for-index="index" wx:for-item="sd">
+      <view class="_view data-v-0b835552 dian dsf_jh_deert">
+        <view class="_view data-v-0b835552 fz26 z9"> 哈哈 </view>
+        <view class="_view data-v-0b835552 fz26 z3 mt10">
+          <text class="_text data-v-0b835552 red">20</text> 元 </view>
+      </view>
+      <view class="_view data-v-0b835552 ov tr fz26 z9">
+        <view class="_view data-v-0b835552 mt50">
+          <text class="_text data-v-0b835552 red"> -20</text> 元 </view>
+      </view>
+      <view class="_view data-v-0b835552 qc"></view>
+    </navigator>
+  </view>
+</template>

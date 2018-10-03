@@ -1,0 +1,18 @@
+<import src="/dx_unp/kongbai.vue.wxml" />
+<template name="d0207fc6">
+  <view class="_view data-v-8804abd4">
+    <view class="_view data-v-8804abd4 pd pt20 pm20 bbm">
+      <view class="_view data-v-8804abd4 dsf_jh_deert dian">
+        <image src="../../static/img/1.png" class="_image data-v-8804abd4 yj dfg_jh_dert cz"></image>
+        <text class="_text data-v-8804abd4 fz32 z3 ml10">名字</text>
+      </view>
+      <view class="_view data-v-8804abd4 ov fz26 z9 df_jh_deert dian tr"> 2018-09-30 17:04:46
+        <view class="_view data-v-8804abd4  tr">
+          <image src="../../static/img/lajixiang.png" class="_image data-v-8804abd4 lajixiang" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}"></image>
+        </view>
+      </view>
+      <view class="_view data-v-8804abd4 qc"></view>
+    </view>
+    <template wx:if="{{false}}" data="{{...$root[$kk+'0'], $root}}" is="e22f524c"></template>
+  </view>
+</template>
