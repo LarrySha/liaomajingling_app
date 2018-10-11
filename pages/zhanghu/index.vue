@@ -33,7 +33,8 @@
 			</view>
 	
 	
-			<kongbai v-if="sd_kis.length<10"></kongbai>
+		<kongbai v-if="sd_kis.length<=0"></kongbai>
+
 
 
 	</view>

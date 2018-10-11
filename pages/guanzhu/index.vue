@@ -33,7 +33,7 @@
 		</view>
 
 
-		<kongbai v-if="sd_kis.length<10"></kongbai>
+		<kongbai v-if="sd_kis.length<=0"></kongbai>
 	</view>
 </template>
 <script>
@@ -87,7 +87,7 @@
 					success: function(res) {
 						if (res.confirm) {
 							var x_remove_attention = {}
-							x_remove_attention.id = id_r
+							x_remove_attention.id = id_r.toString()
 							base.ajax("a_remove_attention", x_remove_attention, function(data) {
 								th.sd_kis.splice(idx, 1);
 

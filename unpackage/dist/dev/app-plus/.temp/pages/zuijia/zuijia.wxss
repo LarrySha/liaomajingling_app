@@ -1,46 +1,46 @@
 @import "../../common/vendor.wxss";
 
-.dsf_jh_s.data-v-7d467d36 {
+.dsf_jh_s.data-v-05a4c814 {
   display: inline-block;
   width: 16rpx;
   height: 16rpx;
 }
-.sd_deert.data-v-7d467d36 {
+.sd_deert.data-v-05a4c814 {
   width: 100%;
   height: 70rpx;
   line-height: 70rpx;
   border-radius: 8rpx;
   padding-left: 20rpx !important;
   font-size: 30rpx;
-  border: 1px solid #eaeaea;
+  border: 1rpx solid #eaeaea;
 }
-.sd_deert.ab.data-v-7d467d36 {
+.sd_deert.ab.data-v-05a4c814 {
   height: 160rpx;
   padding-right: 20rpx !important;
   line-height: 1.5;
   padding-top: 10rpx;
 }
-.df_jh_deert.data-v-7d467d36 {
+.df_jh_deert.data-v-05a4c814 {
   width: 130rpx;
   height: 130rpx;
   text-align: center;
   line-height: 130rpx;
 }
-.qianbieer.data-v-7d467d36 {
+.qianbieer.data-v-05a4c814 {
   width: 52rpx;
   height: 52rpx;
 }
-.sd_h_deeret.data-v-7d467d36 {
+.sd_h_deeret.data-v-05a4c814 {
   width: 130rpx;
   text-align: center;
   float: left;
   margin-right: 30rpx;
 }
-.d_jh_deeert.data-v-7d467d36 {
+.d_jh_deeert.data-v-05a4c814 {
   width: 25%;
   float: left;
 }
-.d_jh_deeert view.br.data-v-7d467d36 {
+.d_jh_deeert view.br.data-v-05a4c814 {
   line-height: 70rpx;
   font-size: 30rpx;
   text-align: center;
@@ -48,25 +48,25 @@
   border-radius: 8rpx;
   margin-top: 20rpx;
 }
-.d_jh_deeert view.br.act.data-v-7d467d36 {
+.d_jh_deeert view.br.act.data-v-05a4c814 {
   color: #70c434 !important;
   background: #ededed;
 }
-.dsf_jh_deert.data-v-7d467d36 {
+.dsf_jh_deert.data-v-05a4c814 {
   width: 100%;
   border-top: 10rpx solid #F8F8F8;
 }
-.down_deert.data-v-7d467d36 {
+.down_deert.data-v-05a4c814 {
   width: 30rpx;
   height: 30rpx;
   position: absolute;
-  right: 0px;
+  right: 0;
   top: 25rpx;
 }
-.sd_jh_dert.data-v-7d467d36 {
+.sd_jh_dert.data-v-05a4c814 {
   width: 540rpx;
 }
-.sd_jh_dert .dsf_dert.data-v-7d467d36 {
+.sd_jh_dert .dsf_dert.data-v-05a4c814 {
   padding-left: 20rpx !important;
   line-height: 65rpx;
   height: 65rpx;
@@ -74,13 +74,13 @@
   width: 260rpx;
   float: left;
 }
-.sd_jh_dert .dsf_dert.ab.data-v-7d467d36 {
+.sd_jh_dert .dsf_dert.ab.data-v-05a4c814 {
   width: 160rpx;
   margin-left: 20rpx;
 }
-.qingkong_de.data-v-7d467d36 {
+.qingkong_de.data-v-05a4c814 {
   border-radius: 8rpx;
-  border: 1px solid #7abd54;
+  border: 1rpx solid #7abd54;
   height: 58rpx;
   line-height: 58rpx;
   display: block;
@@ -90,24 +90,24 @@
   margin-left: 20rpx;
   color: #7abd54;
 }
-.df_erttyxc.data-v-7d467d36 {
+.df_erttyxc.data-v-05a4c814 {
   display: inline-block;
 }
-.giu_dsdf.data-v-7d467d36 {
+.giu_dsdf.data-v-05a4c814 {
   width: 34rpx;
   height: 34rpx;
   display: inline-block;
 }
-.usdd_dseert.data-v-7d467d36 {
+.usdd_dseert.data-v-05a4c814 {
   width: 160rpx;
   height: 160rpx;
 }
-.down_deert.act.data-v-7d467d36 {
+.down_deert.act.data-v-05a4c814 {
   display: inline-block;
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-.shengcsd_sewr.data-v-7d467d36 {
+.shengcsd_sewr.data-v-05a4c814 {
   line-height: 80rpx;
   height: 80rpx;
   background: #70C434;
@@ -118,7 +118,7 @@
   font-size: 30rpx;
   margin-bottom: 100rpx;
 }
-.sd_jh_eeer ._textarea.data-v-7d467d36 {
+.sd_jh_eeer ._textarea.data-v-05a4c814 {
   height: 250rpx;
   line-height: 1.5;
   width: 100%;
@@ -127,44 +127,44 @@
   font-size: 30rpx;
   padding: 15rpx 20rpx !important;
 }
-.clse_dseert.data-v-7d467d36 {
+.clse_dseert.data-v-05a4c814 {
   position: absolute;
   right: -10rpx;
   top: -10rpx;
   z-index: 100;
 }
-.add_sertx.data-v-7d467d36 {
+.add_sertx.data-v-05a4c814 {
   width: 205rpx;
   height: 205rpx;
   margin-bottom: 20rpx;
   display: inline-block;
   margin-right: 30rpx;
 }
-.add_sertx image.data-v-7d467d36 {
+.add_sertx image.data-v-05a4c814 {
   width: 100%;
   height: 100%;
 }
-.add_sertx.data-v-7d467d36 {
+.add_sertx.data-v-05a4c814 {
   width: 205rpx;
   height: 205rpx;
   margin-bottom: 20rpx;
   display: inline-block;
   margin-right: 30rpx;
 }
-.add_sertx.ab.data-v-7d467d36 {
+.add_sertx.ab.data-v-05a4c814 {
   text-align: center;
   line-height: 205rpx;
-  border: 2px dashed #7ABD54;
+  border: 2rpx dashed #7ABD54;
 }
-.add_sertx image.data-v-7d467d36 {
+.add_sertx image.data-v-05a4c814 {
   width: 100%;
   height: 100%;
 }
-.add_sertx.ab image.data-v-7d467d36 {
+.add_sertx.ab image.data-v-05a4c814 {
   width: 60rpx;
   height: 60rpx;
 }
-.dsfdsf_deet.data-v-7d467d36 {
+.dsfdsf_deet.data-v-05a4c814 {
   padding-top: 30rpx;
   padding-bottom: 30rpx;
 }

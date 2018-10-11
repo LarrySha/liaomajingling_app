@@ -1,16 +1,16 @@
 @import "../../common/vendor.wxss";
 
-.dfg_jh_dert.data-v-3c168b56 {
+.dfg_jh_dert.data-v-8804abd4 {
   width: 60rpx;
   height: 60rpx;
 }
-.dsf_jh_deert.data-v-3c168b56 {
+.dsf_jh_deert.data-v-8804abd4 {
   width: 50%;
   float: left;
 }
-.df_jh_deert.data-v-3c168b56 {
+.df_jh_deert.data-v-8804abd4 {
   line-height: 60rpx;
 }
-.df_jh_deert.data-v-3c168b56 {
+.df_jh_deert.data-v-8804abd4 {
   line-height: 1.6;
 }

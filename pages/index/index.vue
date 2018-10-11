@@ -6,12 +6,11 @@
 
 		<view class="mt20 pd">
 			<view>
-				<text class="bgzhu dsf_jh_s yj"></text>
-				<text class="fz30 ml10">标题</text>
+				<text class="bgzhu dsf_jh_s yj"></text><text class="fz30 ml10">标题</text>
 			</view>
 
 			<view class="mt20">
-				<input class="sd_deert" v-model="form.title"></input>
+				<input class="sd_deert" v-model="form.title" maxlength="18"></input>
 			</view>
 
 			<view class="mt30">
@@ -25,23 +24,23 @@
 
 
 			<view class="mt30">
-				<text class="bgzhu dsf_jh_s yj"></text>
-				<text class="fz30 ml10">料</text>
+				<text class="bgzhu dsf_jh_s yj"></text><text class="fz30 ml10">料</text>
 			</view>
 
 			<view class="mt20">
 
 				<view class='pr sd_jh_eeer' v-if="liao_sd_a">
-					<icon type='clear' class="clse_dseert" @click="liao_sd_a=false"></icon>
+					<icon type='clear' class="clse_dseert" @click="liao_sd_a=false" size="18"></icon>
 					<textarea class='br' v-model="form.content "></textarea>
 				</view>
 
 
 
-				<view class='pr' v-if="s_kj_der.length>0">
-					<view class='add_sertx pr cz' v-for="(sd,idx) in s_kj_der">
+				<view class='pr' v-if="img.length>0">
+
+					<view class='add_sertx pr cz' v-for="(sd,idx) in img">
 						<icon type='clear' class="clse_dseert" @click='dsf_derty(idx)'></icon>
-						<image :src="sd" @click="lltu(sd)"></image>
+						<image :src="img_url+sd" @click="lltu(sd)"></image>
 					</view>
 
 					<view class='add_sertx ab cz' @click="shg_deert">
@@ -66,7 +65,7 @@
 
 
 
-				<view class="sd_h_deeret" @click="shg_deert" v-if="s_kj_der.length<=0">
+				<view class="sd_h_deeret" @click="shg_deert" v-if="img.length<=0">
 
 					<view class='yj4 br df_jh_deert'>
 						<image src='../../static/img/tupian.png' class='qianbieer cz'></image>
@@ -89,12 +88,11 @@
 
 
 
-
+		<view class="mt30 df_jh_deer">
+			<text class="bgzhu dsf_jh_s yj"></text><text class="fz30 ml10">定价(元)</text>
+		</view>
 		<view class='pl20'>
-			<view class="mt30">
-				<text class="bgzhu dsf_jh_s yj"></text>
-				<text class="fz30 ml10">定价(元)</text>
-			</view>
+
 			<view v-for="sd in dingjia" class="d_jh_deeert pr20" @click="sd_dsf(sd)">
 
 				<view class='br  ' :class="sd.cls">{{sd.name}}</view>
@@ -103,7 +101,7 @@
 			<view class='qc'></view>
 
 			<view class="mt20 pr20">
-				<input class="sd_deert" placeholder='自定义金额' v-model="form.price"></input>
+				<input type="digit" class="sd_deert" placeholder='自定义金额' v-model="form.price"></input>
 			</view>
 
 
@@ -121,18 +119,18 @@
 		<view class='pd dsf_jh_deert mt20'>
 			<view class=' pt20 pm20 bbm'>
 				<text class="fz30 ">其他功能</text>
-				<text class='fz26 red'>(非必填)</text>
+				<text class='fz24 red'>(非必填)</text>
 			</view>
 
 			<view class="pd">
 
-				<view class='dsfdsf_deet fz30 pr bbm'>
-					<view @click="is_sdf_a?is_sdf_a=false:is_sdf_a=true">
+				<view class='dsfdsf_deet fz28 pr bbm'>
+					<view @click="is_sdf_a?is_sdf_a=false:is_sdf_a=true" class="sd_deeerertt">
 						过期时间
-						<image src='../../static/img/down.png' class="down_deert"></image>
+						<image src='../../static/img/down.png' class="down_deert" :class="!is_sdf_a?'':'act'"></image>
 					</view>
 					<view class='mt20' v-if="is_sdf_a">
-						<view class='red fz26 pm20'>所选时间为稿件下架时间，此时段以后将不能被购买
+						<view class='red fz26 pm40'>所选时间为稿件下架时间，此时段以后将不能被购买
 						</view>
 						<view class='sd_jh_dert fl'>
 
@@ -156,33 +154,39 @@
 
 						</view>
 
-						<view class='ov'>
+						<view class='ov '>
 							<text class='qingkong_de' @click='qingdf'>清空</text>
 						</view>
-						<view class="qc">
-
-						</view>
+						<view class="qc pm30"></view>
 
 
 					</view>
 				</view>
 
-				<view class='dsfdsf_deet fz30 pr bbm'>
-					<view @click="is_sdf_b?is_sdf_b=false:is_sdf_b=true">
-						是否退款
-						<image src='../../static/img/down.png' class="down_deert"></image>
+				<view class='dsfdsf_deet fz28 pr bbm'>
 
+
+
+					<view @click="is_sdf_b?is_sdf_b=false:is_sdf_b=true" class="sd_deeerertt">
+						是否退款
+						<image src='../../static/img/down.png' class="down_deert" :class="!is_sdf_b?'':'act'"></image>
 					</view>
 
-					<view class='mt20' v-if="is_sdf_b">
-						<view class='red fz26 pm20'>选中退款将会有一键退款的功能 </view>
+
+
+					<view class='mt20 pm30' v-if="is_sdf_b">
+						<view class='red fz26 pm40'>选中退款将会有一键退款的功能 </view>
 						<view bindtap='gu_seert'>
+
 							<view class='df_erttyxc cz' @click="form.is_refund==0?form.is_refund=1:form.is_refund=0">
 
 
-								<text class="ssd_drrrtt cz" v-if="form.is_refund ==0"></text>
-								<icon type="success" size="22" class="cz" v-else />
-								<text class="cz">是否退款</text>
+								<view class="ssd_drrrtt cz">
+
+									<icon type="success_no_circle" size="12 " class="cz" v-if="form.is_refund ==1" color="#85C24D" />
+
+								</view>
+								<text class="cz ml5">是否退款</text>
 
 
 
@@ -195,17 +199,20 @@
 
 
 				</view>
-				<view class='dsfdsf_deet fz30 pr bbm'>
+				<view class='dsfdsf_deet fz28 pr bbm'>
 
-					<view @click="is_sdf_c?is_sdf_c=false:is_sdf_c=true">
+
+
+
+					<view @click="is_sdf_c?is_sdf_c=false:is_sdf_c=true" class="sd_deeerertt">
 						选择模板
-						<image src='../../static/img/down.png' class="down_deert"></image>
+						<image src='../../static/img/down.png' class="down_deert" :class="!is_sdf_c?'':'act'"></image>
 					</view>
 
 
 
-					<view class='pt20' v-if="is_sdf_c">
-						<view class='red fz26 pm20 '>点击图片选择料码模版 </view>
+					<view class='pt20 pm30' v-if="is_sdf_c">
+						<view class='red fz26 pm40 '>点击图片选择料码模版 </view>
 						<view>
 							<image :src="'../../static/img/'+moban_ds+'.png'" class="usdd_dseert" @click='xzmb_erert'></image>
 
@@ -244,7 +251,7 @@
 	import base from "../../common/base.js"
 	export default {
 		data: {
-			title: 'Hello',
+			title: '',
 			jiner: '',
 			date: "",
 			time_sd: "",
@@ -260,8 +267,8 @@
 				content: "", //内容
 				img: "", //内容图片，和内容至少填一个
 				price: 0, //价格（元）
-				color_s: "", // 二维码上半色
-				color_x: "", //二维码下半色
+				color_s: "#DE3319", // 二维码上半色
+				color_x: "#FD4626", //二维码下半色
 				is_refund: 0, //是否退款0不退款1有退款
 				expire_time_str: "" //过期时间（非必填）
 			},
@@ -300,7 +307,8 @@
 				cls: ""
 			}],
 			s_kj_der: [],
-			img: []
+			img: [],
+			img_url: ""
 
 		},
 		components: {},
@@ -316,12 +324,15 @@
 		},
 		methods: {
 			xzmb_erert() {
-				let th=this 
+				let th = this
+
+
 				wx.navigateTo({
 					url: '/pages/xzmb/xzmb?id_s=' + th.moban_ds
 				})
 			},
 			sclm_ddrt() { //生成料码
+				let th = this
 				if (!this.form.title) {
 					uni.showToast({
 						title: '请输入标题',
@@ -339,13 +350,59 @@
 					})
 					return
 				}
+				if (this.form.price > 3000) {
+					uni.showToast({
+						title: '金额最大3000元！',
+						icon: 'none',
+						duration: 2000
+					})
+					return
+				}
+
+				// 				if (this.img.length != this.s_kj_der.length) {
+				// 					uni.showToast({
+				// 						title: '图片未上传成功请等待！',
+				// 						icon: 'none',
+				// 						duration: 2000
+				// 					})
+				// 					return
+				// 				}
 
 				this.form.img = this.img.join(",")
+
+				uni.showToast({
+					title: th.img.join(","),
+					icon: 'none',
+					duration: 2000
+				})
 				this.form.expire_time_str = this.date + " " + this.time_sd
 				base.ajax("a_add_resource", this.form, function(data) {
 					uni.redirectTo({
 						url: '/pages/list_de/list_de?type_e=1&code_r=' + data.data
 					})
+					th.title = ''
+					th.jiner = ''
+					th.date = ""
+					th.time_sd = ""
+					th.is_sdf_a = false
+					th.is_sdf_b = false
+					th.is_sdf_c = false
+					th.liao_sd_a = false
+					th.liao_sd_b = false
+					th.moban_ds = 9
+					th.form = {
+						title: "", //标题
+						introduce: "", //简介
+						content: "", //内容
+						img: "", //内容图片，和内容至少填一个
+						price: 0, //价格（元）
+						color_s: "#DE3319", // 二维码上半色
+						color_x: "#FD4626", //二维码下半色
+						is_refund: 0, //是否退款0不退款1有退款
+						expire_time_str: "" //过期时间（非必填）
+					}
+					th.s_kj_der = []
+					th.img = []
 				})
 
 
@@ -380,6 +437,13 @@
 						var login_wer = uni.getStorageSync('token')
 						res.tempFilePaths.map(a => {
 							th.s_kj_der.push(a)
+
+							uni.showLoading({
+								title: '加载中'
+							});
+
+
+
 							uni.uploadFile({
 								url: 'https://lmjl.ttkgou.com/lmjl_core/app/a_img_upload_one', //仅为示例，非真实的接口地址
 								filePath: a,
@@ -388,9 +452,10 @@
 									'token': login_wer
 								},
 								success: function(res) {
+									uni.hideLoading();
 									let sf_ddr = JSON.parse(res.data)
 									th.img.push(sf_ddr.data)
-									console.log(th.img)
+
 								}
 							})
 						})
@@ -411,17 +476,28 @@
 				});
 			}
 		},
-		mounted() {},
+		mounted() {
+			this.img_url = uni.getStorageSync('img_url')
+		},
 	}
 </script>
 
 
 
 <style>
+	.sd_deeerertt {
+		position: relative;
+		z-index: 10000;
+		height: 100rpx;
+		line-height: 100rpx;
+	}
+
 	.dsf_jh_s {
 		display: inline-block;
 		width: 16rpx;
 		height: 16rpx;
+		position: relative;
+		left: 12rpx;
 	}
 
 	.sd_deert {
@@ -506,7 +582,7 @@
 	}
 
 	.sd_jh_dert .dsf_dert.ab {
-		width: 160rpx;
+		width: 180rpx;
 		margin-left: 20rpx
 	}
 
@@ -568,7 +644,7 @@
 
 	.clse_dseert {
 		position: absolute;
-		right: -10rpx;
+		right: -5rpx;
 		top: -10rpx;
 		z-index: 100
 	}
@@ -599,15 +675,27 @@
 	}
 
 	.dsfdsf_deet {
-		padding-top: 30rpx;
-		padding-bottom: 30rpx;
+
+		padding-left: 20rpx;
 	}
 
 	.ssd_drrrtt {
 		border: 1px solid #999;
-		width: 32rpx;
-		height: 32rpx;
+		width: 36rpx;
+		height: 36rpx;
 		border-radius: 50%;
 		display: inline-block;
+		text-align: center;
+		line-height: 42rpx;
+	}
+
+	.ssd_drrrtt icon {
+		position: relative;
+		top: 6rpx;
+	}
+
+	.df_jh_deer {
+		padding-left: 12rpx;
+		;
 	}
 </style>

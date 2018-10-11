@@ -14,7 +14,7 @@
 
 		<view v-if="is_mm==0">
 
-			<navigator class='sd_drrttys pd bbm pt20 pm20' :url="'/pages/list_de/list_de?code_r='+sd.id" v-for="(sd,idx) in resource_list">
+			<navigator class='sd_drrttys pd bbm pt20 pm20 pr' :url="'/pages/list_de/list_de?code_r='+sd.id" v-for="(sd,idx) in resource_list">
 				<view class='dian dsf_jh_deert'>
 					<view class="fz26 z9">
 						{{sd.timedf}}
@@ -44,8 +44,7 @@
 			<view v-if="!isgeng_d&&resource_list_leg>=10" class="pt20 pm20 btm cen fz26">
 				加载中...
 			</view>
-			<kongbai v-if="isgeng_d&&resource_list_leg<10"></kongbai>
-
+	<kongbai v-if="resource_list_leg<=0"></kongbai>
 		</view>
 
 
@@ -58,7 +57,7 @@
 
 
 
-			<navigator class='sd_drrttys pd bbm pt20 pm20' v-for="(item,idx) in x_get_order_list_d" :url="'/pages/xiangqing/xiangqing?id_r='+item.resource_id">
+			<navigator class='sd_drrttys pd bbm pt20 pm20 pr' v-for="(item,idx) in x_get_order_list_d" :url="'/pages/xiangqing/xiangqing?id_r='+item.resource_id">
 				<view class='dian dsf_jh_deert'>
 					<view class="fz26 z9">
 						{{item.timedf}}
@@ -88,9 +87,8 @@
 			<view v-if="!isgeng_d_er&&x_get_order_list_d_leg>=10" class="pt20 pm20 btm cen fz26">
 				加载中...
 			</view>
-			<kongbai v-if="!isgeng_d_er&&x_get_order_list_d_leg.length<10"></kongbai>
 
-
+	<kongbai v-if="x_get_order_list_d_leg<=0"></kongbai>
 
 
 		</view>
@@ -195,20 +193,21 @@
 			delect_er(sd, idx) { //我买的料删除
 				var ssd_ceet = {},
 					th = this
+					
 				ssd_ceet.id = sd.id.toString(),
 					uni.showModal({
 						title: '提示',
 						content: '确定是否删除这条记录？',
 						success: function(res) {
 							if (res.confirm) {
-								base.ajax("x_remove_order", ssd_ceet, function(data) {
-									th.x_get_order_list_d.splice(idx, 1);
+								base.ajax("a_remove_order", ssd_ceet, function(data) {
+								 th.x_get_order_list_d.splice(idx, 1);
 								})
 							}
 						}
 
 					})
-			},
+			}, 
 
 			delect(sd, idx) {
 				var ssd_ceet = {},
@@ -233,14 +232,17 @@
 
 		},
 		onShow: function() {
-
 			this.resource_list = []
 			this.x_get_order_list_d = []
 			this.pageNo = 1
+			this.pageNo_er=1
 			this.isgeng_d_er = 1
 			this.isgeng_d = false
 			this.isgeng_d_er = false
 			this.get_resource()
+			this.get_maier()
+			
+			
 		},
 
 		/**
@@ -264,8 +266,13 @@
 </script>
 <style scoped>
 	.DSf_dsf_drrt {
-
-		height: 55rpx;
+		padding: 20rpx;
+		height: 100%;
+		padding-top: 40rpx;
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: 1000;
 	}
 
 

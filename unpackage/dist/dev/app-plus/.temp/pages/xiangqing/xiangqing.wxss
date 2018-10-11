@@ -1,15 +1,15 @@
 @import "../../common/vendor.wxss";
 
-.dsf_sddf.data-v-ecc75428 {
+.dsf_sddf.data-v-303d36a8 {
   width: 100%;
   height: 314rpx;
 }
-.topi_sd.data-v-ecc75428 {
+.topi_sd.data-v-303d36a8 {
   width: 100%;
 }
-.dfdsf_jh_drt.data-v-ecc75428 {
+.dfdsf_jh_drt.data-v-303d36a8 {
   min-height: 700rpx;
 }
-.dsf_jh_deerty.data-v-ecc75428 {
+.dsf_jh_deerty.data-v-303d36a8 {
   white-space: pre-line;
 }

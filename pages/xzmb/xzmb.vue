@@ -54,6 +54,19 @@
 				}]
 			}
 		},
+		/**
+		 * 生命周期函数--监听页面加载
+		 */
+		onLoad: function(options) {
+			let id_s = options.id_s - 1
+			this.xz_dsf.map(a => {
+				a.cls = ""
+			})
+			this.xz_dsf[id_s].cls = "act"
+		
+
+		},
+
 		components: {},
 		methods: {
 			sd_ddfgs(sd) {
@@ -62,7 +75,7 @@
 					a.cls = ""
 				})
 				this.xz_dsf[idx - 1].cls = "act"
-		
+
 				uni.setStorageSync('id_s', idx)
 				uni.setStorageSync('yanse', this.xz_dsf[idx - 1].yanse)
 				uni.switchTab({

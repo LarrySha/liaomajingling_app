@@ -19,7 +19,7 @@
 		  <view class='fz30 z6 mt20'>
       <text selectable='true' class='dsf_jh_deerty'>{{item.content}}</text>
 	
- <image :src="sf_e" class='topi_sd mt20' mode="widthFix" v-for="(sf_e,idxe) in item.imgder"></image> 
+ <image :src="sf_e" class='topi_sd mt40' mode="widthFix" v-for="(sf_e,idxe) in item.imgder"></image> 
 
     <!--  <image :src='sf' class='topi_sd mt20' mode="widthFix" v-for="sf in item.imgder"></image> -->
 
@@ -33,8 +33,9 @@
 
 
 		<view class='fz32 z6 cen mt40 pm40 btm pt20'>
+			<view class="fz28 pm20 pt20">- 以上内容仅代表发布者个人意见，仅供浏览及参考 -</view>
 			料码
-			<view class=' fz26'>资源扫码工具，帮你提高效率</view>
+			<view class=' fz26 mt20'>资源扫码工具，帮你提高效率</view>
 		</view>
 
 

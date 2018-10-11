@@ -1,10 +1,10 @@
 @import "../../common/vendor.wxss";
 
-.fg_jh_df.data-v-10904583 {
+.fg_jh_df.data-v-df11377a {
   width: 50%;
   float: left;
 }
-.dsf_kh_det.data-v-10904583 {
+.dsf_kh_det.data-v-df11377a {
   width: 40rpx;
   height: 40rpx;
 }

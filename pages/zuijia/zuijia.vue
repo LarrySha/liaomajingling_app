@@ -29,15 +29,16 @@
 
 				<view class='pr sd_jh_eeer' v-if="liao_sd_a">
 					<icon type='clear' class="clse_dseert" @click="liao_sd_a=false"></icon>
-					<textarea class='br' v-model="form.content "></textarea>
+					<textarea class='br' v-model="content "></textarea>
 				</view>
 
 
 
-				<view class='pr' v-if="s_kj_der.length>0">
-					<view class='add_sertx pr cz' v-for="(sd,idx) in s_kj_der">
+				<view class='pr' v-if="img.length>0">
+
+					<view class='add_sertx pr cz' v-for="(sd,idx) in img">
 						<icon type='clear' class="clse_dseert" @click='dsf_derty(idx)'></icon>
-						<image :src="sd" @click="lltu(sd)"></image>
+						<image :src="img_url+sd" @click="lltu(sd)"></image>
 					</view>
 
 					<view class='add_sertx ab cz' @click="shg_deert">
@@ -53,7 +54,7 @@
 					<view class="z9 fz26 mt10">文字</view>
 
 				</view>
-				<view class="sd_h_deeret" @click="shg_deert" v-if="s_kj_der.length<=0">
+				<view class="sd_h_deeret" @click="shg_deert" v-if="img.length<=0">
 
 					<view class='yj4 br df_jh_deert'>
 						<image src='../../static/img/tupian.png' class='qianbieer cz'></image>
@@ -87,7 +88,7 @@
 				content: "", //内容
 				title: "",
 				id_r: 0,
-
+				img_url: ""
 
 			}
 		},
@@ -139,6 +140,9 @@
 						var login_wer = uni.getStorageSync('token')
 						res.tempFilePaths.map(a => {
 							th.s_kj_der.push(a)
+							uni.showLoading({
+								title: '加载中'
+							});
 							uni.uploadFile({
 								url: 'https://lmjl.ttkgou.com/lmjl_core/app/a_img_upload_one', //仅为示例，非真实的接口地址
 								filePath: a,
@@ -147,6 +151,8 @@
 									'token': login_wer
 								},
 								success: function(res) {
+									uni.hideLoading();
+
 									let sf_ddr = JSON.parse(res.data)
 									th.img.push(sf_ddr.data)
 
@@ -172,7 +178,9 @@
 
 
 		},
-		mounted() {},
+		mounted() {
+			this.img_url = uni.getStorageSync('img_url')
+		},
 	}
 </script>
 <style scoped>

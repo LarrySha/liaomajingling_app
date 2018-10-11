@@ -57,7 +57,7 @@
 
 		<view class='btm pd pt20 pm20 fz30 pr' v-for="item in femsd_sd" v-if="type_e!=1">
 			<image :src='item.head_img' class='yj topi_sd_deer cz'></image>
-			<text class='ml10'>{{item.nick_name}}   {{item.status}}</text>
+			<text class='ml10'>{{item.nick_name}} </text>
 			<image src='../../static/img/yituikuan.png' class='yituikuan_der' v-if="item.status==3"></image>
 			<view class='fr fz26 z9'>{{item.timedf}}</view>
 		</view>

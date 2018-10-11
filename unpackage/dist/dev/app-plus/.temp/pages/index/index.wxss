@@ -1,9 +1,17 @@
 @import "../../common/vendor.wxss";
 
+.sd_deeerertt {
+  position: relative;
+  z-index: 10000;
+  height: 100rpx;
+  line-height: 100rpx;
+}
 .dsf_jh_s {
   display: inline-block;
   width: 16rpx;
   height: 16rpx;
+  position: relative;
+  left: 12rpx;
 }
 .sd_deert {
   width: 100%;
@@ -75,7 +83,7 @@
   float: left;
 }
 .sd_jh_dert .dsf_dert.ab {
-  width: 160rpx;
+  width: 180rpx;
   margin-left: 20rpx;
 }
 .qingkong_de {
@@ -129,7 +137,7 @@
 }
 .clse_dseert {
   position: absolute;
-  right: -10rpx;
+  right: -5rpx;
   top: -10rpx;
   z-index: 100;
 }
@@ -154,13 +162,21 @@
   height: 60rpx;
 }
 .dsfdsf_deet {
-  padding-top: 30rpx;
-  padding-bottom: 30rpx;
+  padding-left: 20rpx;
 }
 .ssd_drrrtt {
-  border: 1px solid #999;
-  width: 32rpx;
-  height: 32rpx;
+  border: 1rpx solid #999;
+  width: 36rpx;
+  height: 36rpx;
   border-radius: 50%;
   display: inline-block;
+  text-align: center;
+  line-height: 42rpx;
+}
+.ssd_drrrtt icon {
+  position: relative;
+  top: 6rpx;
+}
+.df_jh_deer {
+  padding-left: 12rpx;
 }

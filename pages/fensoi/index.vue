@@ -29,7 +29,8 @@
 		</view>
 
 
-		<kongbai v-if="sd_kis.length<10"></kongbai>
+	<kongbai v-if="sd_kis.length<=0"></kongbai>
+
 
 	</view>
 </template>
@@ -63,7 +64,7 @@
 					th = this
 
 				x_get_transfer_list.pageNo = this.pageNo.toString()
-				base.ajax("a_get_attention_list", x_get_transfer_list, function(data) {
+				base.ajax("a_get_follower_list", x_get_transfer_list, function(data) {
 					data.data.map(a => {
 						a.timedf = base.time_er(a.create_time)
 						th.sd_kis.push(a)

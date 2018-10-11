@@ -1,8 +1,21 @@
 <template>
 	<view>
 		<view class='pd pt20 pm20 dfs_hg_deert' v-if="is_hide">
-			<view class='cf fz26'>今日收益</view>
-			<view class='df_jh_deet cf cen mt20'>
+			<view class='cf fz26 '>今日收益
+				<view class='df_jh_deet cf cen  fr pr20 ab'>
+					<image :src='user_info.head_img' class='user_icon_e yj cz'></image>
+
+					<text class=' fz26 cz ml10'>{{user_info.nick_name}}</text>
+				</view>
+			</view>
+
+			<view class="qc">
+
+			</view>
+
+
+
+			<view class='df_jh_deet cf cen '>
 				￥{{sd.day_amount}}
 
 			</view>
@@ -11,7 +24,7 @@
 				<view class='scfd_Jhg_der'>
 					<view class='fz32 cf cen'>{{sd.balance}}</view>
 					<view class='fz26 cf cen'>余额</view>
-				</view> 
+				</view>
 
 				<view class='scfd_Jhg_der'>
 					<view class='fz32 cf cen'>{{sd.all_amount}}</view>
@@ -22,13 +35,9 @@
 			</view>
 		</view>
 
-		<view class='pd pt20 pm20 dfs_hg_deert' v-if="!is_hide">
+		<view class='pd pt20 pm20 dfs_hg_deert'>
 
-			<view class='df_jh_deet cf cen mt20'>
-				<image :src='user_info.head_img' class='user_icon_e yj'></image>
 
-				<view class='mt20 fz30'>{{user_info.nick_name}}</view>
-			</view>
 
 
 
@@ -54,7 +63,7 @@
 
 		<view v-if="is_hide">
 			<navigator class='pd sd_dff_dreer bbm pr btm' url="/pages/zhanghu/index">
-				收入明细
+				账户明细
 				<image src='../../static//img/right.png' class='right_icone'></image>
 			</navigator>
 
@@ -78,21 +87,21 @@
 				为了您的资金安全，请在【料码精灵】公众号【我的钱包】进行提现，谢谢！
 
 			</view>
- 
+
 
 		</view>
 
 
-		<view class='pd pm40'>
+		<view class='pd '>
 			<view class='shengcsd_sewr' @click='tuichu'>
 				退出登录
 			</view>
 		</view>
 
 
-<navigator class="cen fz26 mt40 red sd_j_rrrt" url="/pages/xieyi/xieyi">
-	用户使用协议
-</navigator>
+		<navigator class="cen fz30 mt10 red sd_j_rrrt" url="/pages/xieyi/xieyi">
+			用户使用协议
+		</navigator>
 		<!-- <view class='mt50 fz32 cen z6 gff_cderert' v-if="is_hide">
     料码
   <view class='fz22 z6'>资源变现工具，帮你提高变现率</view>
@@ -127,22 +136,26 @@
 			})
 		},
 		components: {},
-		methods: { 
+		methods: {
 			tuichu() {
 				uni.removeStorageSync('is_hide');
 				uni.removeStorageSync('x_login');
 				uni.removeStorageSync('img_url');
 				uni.removeStorageSync('img_url_qr');
 				uni.removeStorageSync('token');
- //uni.removeStorageSync('get_key'); 
-				
-				uni.navigateTo({
+				// uni.removeStorageSync('get_key'); 
+				base.authLogout(); 
+				uni.reLaunch({
 					url: '/pages/star/index'
 				});
 			}
-
 		},
-		mounted() {},
+		mounted() {
+
+	
+			
+			
+		},
 	}
 </script>
 <style scoped>
@@ -152,6 +165,12 @@
 
 	.df_jh_deet {
 		font-size: 72rpx;
+	}
+
+	.df_jh_deet.ab {
+		position: relative;
+		bottom: 30rpx;
+
 	}
 
 	.scfd_Jhg_der {
@@ -189,8 +208,8 @@
 	}
 
 	.user_icon_e {
-		width: 150rpx;
-		height: 150rpx;
+		width: 65rpx;
+		height: 65rpx;
 	}
 
 	.sd_dff_dreer {
@@ -213,9 +232,10 @@
 		font-size: 30rpx;
 		margin-bottom: 100rpx;
 	}
-	.sd_j_rrrt{
+
+	.sd_j_rrrt {
 		padding-top: 20rpx;
 		padding-bottom: 20rpx;
-		  text-decoration:underline 
+		text-decoration: underline
 	}
 </style>

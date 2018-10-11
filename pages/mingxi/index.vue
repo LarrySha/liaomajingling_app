@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<navigator class='sd_drrttys pd bbm pt20 pm20' v-for="item in sd_kis" :url="'/pages/list_de/list_de?code_r='+item.id">
+		<navigator class='sd_drrttys pd bbm pt20 pm20' v-for="item in sd_kis" >
 			<view class='dian dsf_jh_deert'>
 				<view class="fz26 z9">
 					{{item.timedf}}
@@ -31,7 +31,8 @@
 				</view>
 		
 		
-				<kongbai v-if="sd_kis.length<10"></kongbai>
+			<kongbai v-if="sd_kis.length<=0"></kongbai>
+
 				
 				
 

@@ -1,16 +1,16 @@
 <import src="/dx_unp/kongbai.vue.wxml" />
-<template name="9d8180b6">
-  <view class="_view data-v-76a40faa">
-    <view class="_view data-v-76a40faa pd pt20 pm20 bbm" wx:for="{{sd_kis}}" wx:for-index="index" wx:for-item="item">
-      <view class="_view data-v-76a40faa dsf_jh_deert dian">
-        <image src="{{item.dp_head_img}}" class="_image data-v-76a40faa yj dfg_jh_dert cz"></image>
-        <text class="_text data-v-76a40faa fz32 z3 ml10">{{item.dp_nick_name}}</text>
+<template name="3241f56e">
+  <view class="_view data-v-61fe18ea">
+    <view class="_view data-v-61fe18ea pd pt20 pm20 bbm" wx:for="{{sd_kis}}" wx:for-index="index" wx:for-item="item">
+      <view class="_view data-v-61fe18ea dsf_jh_deert dian">
+        <image src="{{item.dp_head_img}}" class="_image data-v-61fe18ea yj dfg_jh_dert cz"></image>
+        <text class="_text data-v-61fe18ea fz32 z3 ml10">{{item.dp_nick_name}}</text>
       </view>
-      <view class="_view data-v-76a40faa ov fz26 z9 df_jh_deert dian tr"> {{item.timedf}} </view>
-      <view class="_view data-v-76a40faa qc"></view>
+      <view class="_view data-v-61fe18ea ov fz26 z9 df_jh_deert dian tr"> {{item.timedf}} </view>
+      <view class="_view data-v-61fe18ea qc"></view>
     </view>
-    <view class="_view data-v-76a40faa btm pt20 fz26 pm20 z9 cen" wx:if="{{!is_dsrt&&sd_kis.length>=15}}"> 加载中... </view>
-    <view class="_view data-v-76a40faa btm pt20 fz26 pm20 z9 cen" wx:if="{{is_dsrt&&sd_kis.length>=15}}"> 已加载全部数据 </view>
-    <template wx:if="{{sd_kis.length<10}}" data="{{...$root[$kk+'0'], $root}}" is="7947c194"></template>
+    <view class="_view data-v-61fe18ea btm pt20 fz26 pm20 z9 cen" wx:if="{{!is_dsrt&&sd_kis.length>=15}}"> 加载中... </view>
+    <view class="_view data-v-61fe18ea btm pt20 fz26 pm20 z9 cen" wx:if="{{is_dsrt&&sd_kis.length>=15}}"> 已加载全部数据 </view>
+    <template wx:if="{{sd_kis.length<=0}}" data="{{...$root['0'], ...$root[$kk+'VCK-0'],$root}}" is="e22f524c"></template>
   </view>
 </template>

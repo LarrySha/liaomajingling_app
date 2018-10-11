@@ -1,7 +1,7 @@
 @import "../../common/vendor.wxss";
 
 .sfdf_dfert {
-  padding: 0px;
+  padding: 0;
 }
 .dsfdfrtrty {
   position: fixed;

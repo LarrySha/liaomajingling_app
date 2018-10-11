@@ -3,19 +3,15 @@
 
 	export default {
 		onLaunch: function() {
-			console.log(uni.getStorageSync('get_key'))
-			if (!uni.getStorageSync('get_key')) {
+		
+
+			
 				base.ajax("a_get_key", '', function(data) {
 					let jiemi = data.data
 					console.log(jiemi)
 					uni.setStorageSync('get_key', base.Decrypt(jiemi));
 				})
-			} else { 
-
-
-			}
-
-
+		
 		},
 		onShow: function() {
 

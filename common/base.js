@@ -1,18 +1,19 @@
 var url_d = "https://lmjl.ttkgou.com/lmjl_core/app/"
+// var url_d = "http://192.168.0.106:8080/lmjl_core/app/"
 const key = CryptoJS.enc.Utf8.parse("7de8d8a807e217ce"); //十六位十六进制数作为密钥
 import CryptoJS from "../crypto-js"
 import md5 from "../common/md5.js"
 
 function ajax(url, canshu, call) {
+
 	let urlsd = url_d + url
-	if (url!="a_get_key") {
+	if (url != "a_get_key") {
 		if (uni.getStorageSync('get_key')) {
 			let get_key_e = JSON.parse(uni.getStorageSync('get_key'))
 			let sd_jhsd = jiami_d(canshu, get_key_e.md5_key, get_key_e.aes_key)
 			canshu = {}
 			canshu.token = uni.getStorageSync('token') || '123'
 			canshu.data = sd_jhsd
-
 		} else {
 			setTimeout(function() {
 				uni.navigateTo({
@@ -21,9 +22,9 @@ function ajax(url, canshu, call) {
 			}, 100)
 			return
 		}
-	} 
+	}
 	uni.showLoading({
-		title: '加载中',
+		title: '处理中',
 		mask: true
 	});
 
@@ -36,6 +37,20 @@ function ajax(url, canshu, call) {
 		data: canshu,
 		success: (res) => {
 			uni.hideLoading();
+			if (res.data.code == '0001') {
+				uni.navigateTo({
+					url: '/pages/star/index'
+				});
+				return
+			}
+			if (res.data.code == '0002') {
+				uni.showToast({
+					title: res.data.msg,
+					icon: 'none',
+					duration: 2000
+				})
+				return
+			}
 			call(res.data)
 		}
 	});
@@ -151,10 +166,52 @@ function dateFtt(fmt, date) { //author: meizz
 			fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
 	return fmt;
 }
+
+
+
+
+// 注销所有登录授权认证服务
+function authLogout() {
+
+	var auths = null;
+	plus.oauth.getServices(function(services) {
+		auths = services;
+		for (var i in auths) {
+			var s = auths[i];
+			if (s.authResult) {
+				console.log(JSON.stringify(s))
+				s.logout(function(e) {
+					uni.showToast({
+						title:"注销登录认证成功！",
+						icon: "none",
+						duration: 6000
+					});
+					
+				}, function(e) {
+					uni.showToast({
+						title:"注销登录认证失败！",
+						icon: "none",
+						duration: 6000
+					});
+				});
+			}
+		}
+	}, function(e) {
+		
+	});
+
+
+
+
+}
+
+
+
 export default {
 	Decrypt,
 	Encrypt,
 	ajax,
 	parseParam,
-	time_er
+	time_er,
+	authLogout
 }

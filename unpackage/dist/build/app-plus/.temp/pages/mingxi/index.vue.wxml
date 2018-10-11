@@ -1,9 +1,9 @@
-<import src="/dx_unp/kongbai.vue.wxml" /><template name="5ac47c0d"><view class="_view data-v-20294c12"><navigator class="_navigator data-v-20294c12 sd_drrttys pd bbm pt20 pm20" url="{{'/pages/list_de/list_de?code_r='+item.id}}" wx:for="{{sd_kis}}" wx:for-index="index" wx:for-item="item"><view class="_view data-v-20294c12 dian dsf_jh_deert"><view class="_view data-v-20294c12 fz26 z9">
+<import src="/dx_unp/kongbai.vue.wxml" /><template name="df377c9e"><view class="_view data-v-0b835552"><navigator class="_navigator data-v-0b835552 sd_drrttys pd bbm pt20 pm20" wx:for="{{sd_kis}}" wx:for-index="index" wx:for-item="item"><view class="_view data-v-0b835552 dian dsf_jh_deert"><view class="_view data-v-0b835552 fz26 z9">
 				{{item.timedf}}
-			</view> <view class="_view data-v-20294c12 fz26 z3 mt10"><text class="_text data-v-20294c12 red">{{item.amount}}</text> 元
-			</view></view> <view class="_view data-v-20294c12 ov tr fz26 z9"><view class="_view data-v-20294c12 mt50"><text class="_text data-v-20294c12 red"> -{{item.fee}}</text> 元
-			</view></view> <view class="_view data-v-20294c12 qc"></view></navigator> <view class="_view data-v-20294c12 btm pt20 fz26 pm20 z9 cen" wx:if="{{!is_dsrt&&sd_kis.length>=10}}">
+			</view> <view class="_view data-v-0b835552 fz26 z3 mt10"><text class="_text data-v-0b835552 red">{{item.amount}}</text> 元
+			</view></view> <view class="_view data-v-0b835552 ov tr fz26 z9"><view class="_view data-v-0b835552 mt50"><text class="_text data-v-0b835552 red"> -{{item.fee}}</text> 元
+			</view></view> <view class="_view data-v-0b835552 qc"></view></navigator> <view class="_view data-v-0b835552 btm pt20 fz26 pm20 z9 cen" wx:if="{{!is_dsrt&&sd_kis.length>=10}}">
 				加载中...
-			</view> <view class="_view data-v-20294c12 btm pt20 fz26 pm20 z9 cen" wx:if="{{is_dsrt&&sd_kis.length>=10}}">
+			</view> <view class="_view data-v-0b835552 btm pt20 fz26 pm20 z9 cen" wx:if="{{is_dsrt&&sd_kis.length>=10}}">
 				已加载全部数据
-			</view> <template wx:if="{{sd_kis.length<10}}" data="{{...$root[$kk+'0'], $root}}" is="7947c194"></template></view></template>
+			</view> <template wx:if="{{sd_kis.length<=0}}" data="{{...$root['0'], ...$root[$kk+'HLg-0'],$root}}" is="e22f524c"></template></view></template>

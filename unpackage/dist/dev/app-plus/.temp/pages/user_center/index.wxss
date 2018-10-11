@@ -1,51 +1,55 @@
 @import "../../common/vendor.wxss";
 
-.dfs_hg_deert.data-v-320dcf53 {
+.dfs_hg_deert.data-v-17c78e13 {
   background: #70C434;
 }
-.df_jh_deet.data-v-320dcf53 {
+.df_jh_deet.data-v-17c78e13 {
   font-size: 72rpx;
 }
-.scfd_Jhg_der.data-v-320dcf53 {
+.df_jh_deet.ab.data-v-17c78e13 {
+  position: relative;
+  bottom: 30rpx;
+}
+.scfd_Jhg_der.data-v-17c78e13 {
   width: 50%;
   float: left;
 }
-.right_icone.data-v-320dcf53 {
+.right_icone.data-v-17c78e13 {
   width: 32rpx;
   height: 32rpx;
   position: absolute;
   right: 20rpx;
   top: 25rpx;
 }
-.df_jh_deer.data-v-320dcf53 {
+.df_jh_deer.data-v-17c78e13 {
   text-indent: 40rpx;
   line-height: 1.5;
 }
-.df_dsdft.data-v-320dcf53 {
+.df_dsdft.data-v-17c78e13 {
   width: 50%;
   float: left;
 }
-.de_cdfretry.data-v-320dcf53 {
+.de_cdfretry.data-v-17c78e13 {
   background: #fff;
-  padding: 0px;
+  padding: 0;
   text-align: left;
   padding-left: 20rpx;
 }
-.de_cdfretry.data-v-320dcf53::after {
+.de_cdfretry.data-v-17c78e13::after {
   display: none;
 }
-.user_icon_e.data-v-320dcf53 {
-  width: 150rpx;
-  height: 150rpx;
+.user_icon_e.data-v-17c78e13 {
+  width: 65rpx;
+  height: 65rpx;
 }
-.sd_dff_dreer.data-v-320dcf53 {
+.sd_dff_dreer.data-v-17c78e13 {
   font-size: 26rpx;
   line-height: 80rpx;
 }
-.gff_cderert.data-v-320dcf53 {
+.gff_cderert.data-v-17c78e13 {
   line-height: 1.8;
 }
-.shengcsd_sewr.data-v-320dcf53 {
+.shengcsd_sewr.data-v-17c78e13 {
   line-height: 80rpx;
   height: 80rpx;
   background: #70C434;
@@ -56,7 +60,7 @@
   font-size: 30rpx;
   margin-bottom: 100rpx;
 }
-.sd_j_rrrt.data-v-320dcf53 {
+.sd_j_rrrt.data-v-17c78e13 {
   padding-top: 20rpx;
   padding-bottom: 20rpx;
   text-decoration: underline;
