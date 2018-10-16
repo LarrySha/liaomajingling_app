@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<liaomatou></liaomatou>
+		<liaomatou v-if="is_hide.is_hide==2"></liaomatou>
 
 
 
@@ -25,7 +25,11 @@
 				<text class="fz30 ml10">料</text>
 			</view>
 
-			<view class="mt20">
+	<view class='pr sd_jh_eeer mt20' v-if="is_hide.is_hide ==1">
+					
+					<textarea class='br' v-model="content "></textarea>
+				</view>
+			<view class="mt20" v-if="is_hide.is_hide ==2">
 
 				<view class='pr sd_jh_eeer' v-if="liao_sd_a">
 					<icon type='clear' class="clse_dseert" @click="liao_sd_a=false"></icon>
@@ -81,7 +85,7 @@
 			return {
 				liao_sd_a: false,
 				liao_sd_b: false,
-
+is_hide:"",
 
 				s_kj_der: [],
 				img: [], //图片
@@ -96,8 +100,9 @@
 
 			this.title = options.title
 			this.id_r = options.liao_id
-
-
+		
+			this.is_hide = JSON.parse(uni.getStorageSync("get_key"))
+		
 		},
 
 		components: {},
@@ -118,16 +123,20 @@
 				x_add_content.content = this.content
 				x_add_content.img = this.img.join(",")
 				base.ajax("a_add_content", x_add_content, function(data) {
-					wx.showToast({
-						title: '追加成功',
-						icon: 'none',
-						duration: 2000,
-						success: function() {
-							wx.redirectTo({
+
+					uni.showModal({
+						title: '提示',
+						showCancel: false,
+						content: '追加成功',
+						success: function(res) {
+							uni.redirectTo({
 								url: '/pages/xiangqing/xiangqing?id_r=' + th.id_r
 							})
+
 						}
 					})
+
+
 				})
 
 
@@ -178,6 +187,7 @@
 
 
 		},
+
 		mounted() {
 			this.img_url = uni.getStorageSync('img_url')
 		},

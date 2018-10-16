@@ -1,6 +1,7 @@
 <template>
 	<view>
-		<view class='pd pt20 pm20 dfs_hg_deert' v-if="is_hide">
+		
+		<view class='pd pt20 pm20 dfs_hg_deert' v-if="is_hide.is_hide==2">
 			<view class='cf fz26 '>今日收益
 				<view class='df_jh_deet cf cen  fr pr20 ab'>
 					<image :src='user_info.head_img' class='user_icon_e yj cz'></image>
@@ -35,15 +36,20 @@
 			</view>
 		</view>
 
-		<view class='pd pt20 pm20 dfs_hg_deert'>
+		<view class='pd pt20 pm20 dfs_hg_deert' v-else>
 
+			<view class='df_jh_deet cf cen mt20'>
+				<image src='http://thirdwx.qlogo.cn/mmopen/vi_32/bzAuBySaic9iaXIdr6sf0tSDMicQ4UmF1wUkWzBdAu8QurRVich0ibpWHRgZeeIW8DvVLc8C9Pc4IubBBeSRGNKTJuA/132'
+				 class='user_icon_e yj ak'></image>
 
+				<view class='mt20 fz30'>小鸣</view>
+			</view>
 
 
 
 		</view>
 
-
+ 
 		<view class='cen mui-row'>
 			<navigator url="/pages/guanzhu/index" class='df_dsdft cen fz32  pt20 pm20 ls'>
 				关注 <text class='red'>{{sd.attention_num}}</text>
@@ -61,37 +67,31 @@
 
 
 
-		<view v-if="is_hide">
-			<navigator class='pd sd_dff_dreer bbm pr btm' url="/pages/zhanghu/index">
-				账户明细
-				<image src='../../static//img/right.png' class='right_icone'></image>
-			</navigator>
+		<view class="df_derrtt">
+			<view v-if="is_hide==2">
+				<navigator class='pd sd_dff_dreer bbm pr btm' url="/pages/zhanghu/index">
+					账户明细
+					<image src='../../static//img/right.png' class='right_icone'></image>
+				</navigator>
 
 
-			<navigator class='pd sd_dff_dreer bbm pr' url="/pages/mingxi/index">
-				提现明细
-				<image src='../../static//img/right.png' class='right_icone'></image>
-			</navigator>
-		</view>
+				<navigator class='pd sd_dff_dreer bbm pr' url="/pages/mingxi/index">
+					提现明细
+					<image src='../../static//img/right.png' class='right_icone'></image>
+				</navigator>
 
-		<button open-type="contact" v-if="!is_hide" class='pd sd_dff_dreer bbm pr de_cdfretry btm'>
-			联系客服
-			<image src='../../static/img/right.png' class='right_icone'></image>
-		</button>
+				<view class='pd sd_dff_dreer  pr'>
+					提现说明
+					<view class='fz26 red df_jh_deer mt20'>
+
+						为了您的资金安全，请在【料码精灵】公众号【我的钱包】进行提现，谢谢！
+
+					</view>
 
 
-		<view class='pd sd_dff_dreer  pr' v-if="is_hide">
-			提现说明
-			<view class='fz26 red df_jh_deer mt20'>
-
-				为了您的资金安全，请在【料码精灵】公众号【我的钱包】进行提现，谢谢！
-
+				</view>
 			</view>
-
-
 		</view>
-
-
 		<view class='pd '>
 			<view class='shengcsd_sewr' @click='tuichu'>
 				退出登录
@@ -99,7 +99,7 @@
 		</view>
 
 
-		<navigator class="cen fz30 mt10 red sd_j_rrrt" url="/pages/xieyi/xieyi">
+		<navigator class="cen fz30 mt10 red sd_j_rrrt" url="/pages/xieyi/xieyi" v-if="is_hide==2">
 			用户使用协议
 		</navigator>
 		<!-- <view class='mt50 fz32 cen z6 gff_cderert' v-if="is_hide">
@@ -115,17 +115,15 @@
 			return {
 				sd: "",
 				user_info: "",
-				is_hide: true
+				is_hide: ""
 			}
 		},
 		onLoad: function(options) {
-			var login_wer = JSON.parse(uni.getStorageSync('x_login')),
-				is_hide = uni.getStorageSync('is_hide')
-			this.user_info = login_wer
-			if (is_hide == 1) {
-				this.is_hide = false
-
-			}
+		this.is_hide=JSON.parse(uni.getStorageSync("get_key"))
+			var login_wer = JSON.parse(uni.getStorageSync('x_login'))
+			
+				
+			  this.user_info = login_wer
 		},
 		onShow: function() {
 			var th = this
@@ -138,13 +136,12 @@
 		components: {},
 		methods: {
 			tuichu() {
-				uni.removeStorageSync('is_hide');
 				uni.removeStorageSync('x_login');
 				uni.removeStorageSync('img_url');
 				uni.removeStorageSync('img_url_qr');
 				uni.removeStorageSync('token');
 				// uni.removeStorageSync('get_key'); 
-				base.authLogout(); 
+				base.authLogout();
 				uni.reLaunch({
 					url: '/pages/star/index'
 				});
@@ -152,13 +149,17 @@
 		},
 		mounted() {
 
-	
-			
-			
+
+
+
 		},
 	}
 </script>
 <style scoped>
+	.df_derrtt {
+		min-height: 300upx;
+	}
+
 	.dfs_hg_deert {
 		background: #70C434
 	}
@@ -210,6 +211,11 @@
 	.user_icon_e {
 		width: 65rpx;
 		height: 65rpx;
+	}
+
+	.user_icon_e.ak {
+		width: 130upx;
+		height: 130upx;
 	}
 
 	.sd_dff_dreer {

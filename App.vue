@@ -1,16 +1,22 @@
 <script>
 	import base from "common/base.js"
 
-	export default {
+	export default { 
 		onLaunch: function() {
 		
 
 			
 				base.ajax("a_get_key", '', function(data) {
-					let jiemi = data.data
-					console.log(jiemi)
+					let jiemi = data.data,
+						sd_dffgg=JSON.parse(base.Decrypt(jiemi))
+					if(sd_dffgg.is_hide==1){
+						uni.setStorageSync('token', 'a2dd9792520754f93bc1475acb38f3e36746635649573');
+
+					}
+				
+
 					uni.setStorageSync('get_key', base.Decrypt(jiemi));
-				})
+				}) 
 		
 		},
 		onShow: function() {

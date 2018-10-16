@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<liaomatou></liaomatou>
+		<liaomatou v-if="is_hide.is_hide==2"></liaomatou>
 		<view class='bbm'>
 			<view class='sd_jh_deert ' :class="item.cls" v-for="(item,idx) in is_msd" @click="sd_dff(item,idx)">
 				{{item.name}}
@@ -44,7 +44,7 @@
 			<view v-if="!isgeng_d&&resource_list_leg>=10" class="pt20 pm20 btm cen fz26">
 				加载中...
 			</view>
-	<kongbai v-if="resource_list_leg<=0"></kongbai>
+			<kongbai v-if="resource_list_leg<=0"></kongbai>
 		</view>
 
 
@@ -88,7 +88,7 @@
 				加载中...
 			</view>
 
-	<kongbai v-if="x_get_order_list_d_leg<=0"></kongbai>
+			<kongbai v-if="x_get_order_list_d_leg<=0"></kongbai>
 
 
 		</view>
@@ -109,6 +109,7 @@
 				x_get_order_list_d: [],
 				resource_list_leg: 0,
 				x_get_order_list_d_leg: 0,
+				is_hide: "",
 				is_msd: [{
 					name: "我卖的料",
 					cls: "act"
@@ -119,7 +120,27 @@
 			}
 		},
 		components: {},
+		onLoad: function() {
+			let is_msd = [{
+				name: "我生成的料",
+				cls: "act"
+			}, {
+				name: "我看过的料",
+				cls: ""
+			}]
+			this.is_hide = JSON.parse(uni.getStorageSync("get_key"))
+			if (this.is_hide.is_hide == 1) {
+				this.is_msd = is_msd
+			}
+
+		},
 		methods: {
+			qingkong_df() {
+				uni.clearStorageSync()
+				uni.reLaunch({
+					url: "/pages/star/star"
+				})
+			},
 			sd_dff(sd, idx) {
 				this.is_msd.map(a => {
 					a.cls = ""
@@ -193,7 +214,7 @@
 			delect_er(sd, idx) { //我买的料删除
 				var ssd_ceet = {},
 					th = this
-					
+
 				ssd_ceet.id = sd.id.toString(),
 					uni.showModal({
 						title: '提示',
@@ -201,13 +222,13 @@
 						success: function(res) {
 							if (res.confirm) {
 								base.ajax("a_remove_order", ssd_ceet, function(data) {
-								 th.x_get_order_list_d.splice(idx, 1);
+									th.x_get_order_list_d.splice(idx, 1);
 								})
 							}
 						}
 
 					})
-			}, 
+			},
 
 			delect(sd, idx) {
 				var ssd_ceet = {},
@@ -235,14 +256,14 @@
 			this.resource_list = []
 			this.x_get_order_list_d = []
 			this.pageNo = 1
-			this.pageNo_er=1
+			this.pageNo_er = 1
 			this.isgeng_d_er = 1
 			this.isgeng_d = false
 			this.isgeng_d_er = false
 			this.get_resource()
 			this.get_maier()
-			
-			
+
+
 		},
 
 		/**

@@ -1,5 +1,8 @@
 @import "../../common/vendor.wxss";
 
+.df_derrtt.data-v-17c78e13 {
+  min-height: 300rpx;
+}
 .dfs_hg_deert.data-v-17c78e13 {
   background: #70C434;
 }
@@ -41,6 +44,10 @@
 .user_icon_e.data-v-17c78e13 {
   width: 65rpx;
   height: 65rpx;
+}
+.user_icon_e.ak.data-v-17c78e13 {
+  width: 130rpx;
+  height: 130rpx;
 }
 .sd_dff_dreer.data-v-17c78e13 {
   font-size: 26rpx;

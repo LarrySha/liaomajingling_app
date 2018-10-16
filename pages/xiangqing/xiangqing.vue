@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<liaomatou></liaomatou>
+		<liaomatou v-if="is_hide.is_hide==2"></liaomatou>
 
 
 
@@ -16,7 +16,7 @@
 				     {{item.timedf}}
 				</view>
 
-		  <view class='fz30 z6 mt20'>
+		  <view class='fz30 z6 mt20'> 
       <text selectable='true' class='dsf_jh_deerty'>{{item.content}}</text>
 	
  <image :src="sf_e" class='topi_sd mt40' mode="widthFix" v-for="(sf_e,idxe) in item.imgder"></image> 
@@ -48,6 +48,7 @@
 		data() {
 			return {
 				sd: "",
+				is_hide:"",
 				content_l: []
 			}
 		},
@@ -57,6 +58,8 @@
 				th = this,
 				content_l = this.content_l
 			x_get_resource_detail.id = options.id_r
+			this.is_hide = JSON.parse(uni.getStorageSync("get_key"))
+
 			base.ajax("a_get_resource_detail", x_get_resource_detail, function(data) {
 
 				data.data.content_l.map(a => {

@@ -20,7 +20,7 @@
   border-radius: 8rpx;
   padding-left: 20rpx !important;
   font-size: 30rpx;
-  border: 1rpx solid #eaeaea;
+  border: 1rpx solid #e0e0e0;
 }
 .sd_deert.ab {
   height: 160rpx;

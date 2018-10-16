@@ -1,14 +1,14 @@
 <template name="241bed83"><view class="_view data-v-7c573d3c"><view class="_view data-v-7c573d3c pd pt20"><image src="{{ma_sdfg+sd.img_url}}" class="_image data-v-7c573d3c w100 topi_sd"></image> <navigator class="_navigator data-v-7c573d3c caha_ddfr yj4 br mt60" url="{{'/pages/xiangqing/xiangqing?id_r='+srr_df}}">
 			查看详情
-		</navigator> <view class="_view data-v-7c573d3c caha_ddfr yj4 br mt30" bindtap="handleProxy" data-eventid="{{'hrM-0'}}" data-comkey="{{$k}}">
+		</navigator> <view class="_view data-v-7c573d3c caha_ddfr yj4 br mt30" bindtap="handleProxy" data-eventid="{{'IWl-0'}}" data-comkey="{{$k}}">
 			保存到相册
-		</view> <view class="_view data-v-7c573d3c caha_ddfr yj4 br mt30" bindtap="handleProxy" wx:if="{{sd.price>0 && sd.is_refund<2&& sd.is_expire<2}}" data-eventid="{{'tEE-1'}}" data-comkey="{{$k}}">
+		</view> <view class="_view data-v-7c573d3c caha_ddfr yj4 br mt30" bindtap="handleProxy" wx:if="{{sd.price>0 && sd.is_refund<2&& sd.is_expire<2}}" data-eventid="{{'1JJ-1'}}" data-comkey="{{$k}}">
 			一键通知
 			<text class="_text data-v-7c573d3c fz26 red">(关注您的粉丝收到消息推送)</text></view> <navigator url="{{'/pages/zuijia/zuijia?liao_id='+sd.id+'&title='+sd.title}}" class="_navigator data-v-7c573d3c caha_ddfr yj4 br mt30" wx:if="{{sd.is_refund<2&& sd.is_expire<2&&type_e!=1}}">
 			追加内容
-			<text class="_text data-v-7c573d3c fz26 red">(购买过的用户收到消息推送)</text></navigator> <view class="_view data-v-7c573d3c caha_ddfr yj4 br mt30 df_Jh_df_det" wx:if="{{sd.is_refund==1&&type_e!=1}}" bindtap="handleProxy" data-eventid="{{'aaO-2'}}" data-comkey="{{$k}}">
+			<text class="_text data-v-7c573d3c fz26 red">(购买过的用户收到消息推送)</text></navigator> <view class="_view data-v-7c573d3c caha_ddfr yj4 br mt30 df_Jh_df_det" wx:if="{{sd.is_refund==1&&type_e!=1}}" bindtap="handleProxy" data-eventid="{{'IPP-2'}}" data-comkey="{{$k}}">
 			一键退款
-		</view> <view class="_view data-v-7c573d3c caha_ddfr yj4 br mt30 df_Jh_df_det" wx:if="{{type_e==1}}" bindtap="handleProxy" data-eventid="{{'Zqq-3'}}" data-comkey="{{$k}}">
+		</view> <view class="_view data-v-7c573d3c caha_ddfr yj4 br mt30 df_Jh_df_det" wx:if="{{type_e==1}}" bindtap="handleProxy" data-eventid="{{'4ei-3'}}" data-comkey="{{$k}}">
 			关闭
 		</view> <view class="_view data-v-7c573d3c mt60" wx:if="{{type_e!=1}}"><view class="_view data-v-7c573d3c pt20 pm20 fz26">
 

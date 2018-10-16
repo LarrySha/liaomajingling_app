@@ -7,4 +7,4 @@
 			加载中...
 		</view> <view class="_view data-v-df11377a btm pt20 fz26 pm20 z9 cen" wx:if="{{is_dsrt&&sd_kis.length>=10}}">
 			已加载全部数据
-		</view> <template wx:if="{{sd_kis.length<=0}}" data="{{...$root['0'], ...$root[$kk+'ADh-0'],$root}}" is="e22f524c"></template></view></template>
+		</view> <template wx:if="{{sd_kis.length<=0}}" data="{{...$root['0'], ...$root[$kk+'YPr-0'],$root}}" is="e22f524c"></template></view></template>

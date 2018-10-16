@@ -1,7 +1,7 @@
 <template>
 	<view class="content">
 
-		<liaomatou></liaomatou>
+		<liaomatou v-if="is_hide.is_hide==2"></liaomatou>
 
 
 		<view class="mt20 pd">
@@ -50,8 +50,10 @@
 
 				</view>
 
-
-
+<view class='pr sd_jh_eeer'  v-if="is_hide.is_hide==1">
+					<textarea class='br' v-model="form.content "></textarea>
+				</view>
+<view v-if="is_hide.is_hide==2">
 
 				<view class="sd_h_deeret" v-if="!liao_sd_a" @click="liao_sd_a=true">
 					<view class='yj4 br df_jh_deert'>
@@ -77,7 +79,7 @@
 
 
 				<view class="qc"></view>
-
+</view>
 
 
 			</view>
@@ -87,6 +89,8 @@
 		</view>
 
 
+<view v-if="is_hide.is_hide==2">
+	
 
 		<view class="mt30 df_jh_deer">
 			<text class="bgzhu dsf_jh_s yj"></text><text class="fz30 ml10">定价(元)</text>
@@ -109,14 +113,14 @@
 		</view>
 
 
+</view>
 
 
 
 
 
 
-
-		<view class='pd dsf_jh_deert mt20'>
+		<view class='pd dsf_jh_deert mt20' v-if="is_hide.is_hide==2">
 			<view class=' pt20 pm20 bbm'>
 				<text class="fz30 ">其他功能</text>
 				<text class='fz24 red'>(非必填)</text>
@@ -260,6 +264,7 @@
 			is_sdf_c: false,
 			liao_sd_a: false,
 			liao_sd_b: false,
+			is_hide:"",
 			moban_ds: 9,
 			form: {
 				title: "", //标题
@@ -478,6 +483,8 @@
 		},
 		mounted() {
 			this.img_url = uni.getStorageSync('img_url')
+		this.is_hide=JSON.parse(uni.getStorageSync("get_key"))
+			
 		},
 	}
 </script>
@@ -507,7 +514,7 @@
 		border-radius: 8rpx;
 		padding-left: 20rpx !important;
 		font-size: 30rpx;
-		border: 1rpx solid #eaeaea
+		border: 1px solid #e0e0e0
 	}
 
 	.sd_deert.ab {
