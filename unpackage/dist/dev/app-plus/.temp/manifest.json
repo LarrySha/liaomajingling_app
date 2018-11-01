@@ -2,7 +2,7 @@
     "name" : "料码精灵",
     "appid" : "__UNI__E4F824C",
     "description" : "料码精灵",
-    "versionName" : "1.9.0",
+    "versionName" : "1.0",
     "versionCode" : 200,
     "app-plus" : {
         /* 5+App特有相关 */
@@ -95,15 +95,15 @@
                 },
                 "ios" : {
                     "iphone" : {
-                        "retina35" : "C:/Users/Administrator/Desktop/新建文件夹 (3)/微信图片_20181013162522.png",
-                        "retina40" : "C:/Users/Administrator/Desktop/新建文件夹 (3)/微信图片_20181013162522.png",
-                        "retina40l" : "C:/Users/Administrator/Desktop/新建文件夹 (3)/微信图片_20181013162522.png",
-                        "retina47" : "C:/Users/Administrator/Desktop/新建文件夹 (3)/微信图片_20181013162522.png",
-                        "retina47l" : "C:/Users/Administrator/Desktop/新建文件夹 (3)/微信图片_20181013162522.png",
-                        "retina55" : "C:/Users/Administrator/Desktop/新建文件夹 (3)/微信图片_20181013162522.png",
-                        "retina55l" : "C:/Users/Administrator/Desktop/新建文件夹 (3)/微信图片_20181013162522.png",
-                        "iphonexl" : "C:/Users/Administrator/Desktop/新建文件夹 (3)/微信图片_20181013162522.png",
-                        "iphonex" : "C:/Users/Administrator/Desktop/新建文件夹 (3)/微信图片_20181013162522.png"
+                        "retina35" : "C:/Users/Administrator/Desktop/新建文件夹 (3)/01.png",
+                        "retina40" : "C:/Users/Administrator/Desktop/新建文件夹 (3)/02.png",
+                        "retina40l" : "C:/Users/Administrator/Desktop/新建文件夹 (3)/03.png",
+                        "retina47" : "C:/Users/Administrator/Desktop/新建文件夹 (3)/04.png",
+                        "retina47l" : "C:/Users/Administrator/Desktop/新建文件夹 (3)/05.png",
+                        "retina55" : "C:/Users/Administrator/Desktop/新建文件夹 (3)/06.png",
+                        "retina55l" : "C:/Users/Administrator/Desktop/新建文件夹 (3)/07.png",
+                        "iphonexl" : "C:/Users/Administrator/Desktop/新建文件夹 (3)/09.png",
+                        "iphonex" : "C:/Users/Administrator/Desktop/新建文件夹 (3)/08.png"
                     }
                 }
             }

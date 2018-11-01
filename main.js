@@ -7,7 +7,7 @@ Vue.component('kongbai',kongbai)
 Vue.config.productionTip = false
 
 App.mpType = 'app'
-
+ 
 const app = new Vue({ 
     ...App
 })

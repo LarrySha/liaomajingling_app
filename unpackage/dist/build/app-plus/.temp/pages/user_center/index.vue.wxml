@@ -4,7 +4,7 @@
 
 			</view> <view class="_view data-v-17c78e13 mt20"><view class="_view data-v-17c78e13 scfd_Jhg_der"><view class="_view data-v-17c78e13 fz32 cf cen">{{sd.balance}}</view> <view class="_view data-v-17c78e13 fz26 cf cen">余额</view></view> <view class="_view data-v-17c78e13 scfd_Jhg_der"><view class="_view data-v-17c78e13 fz32 cf cen">{{sd.all_amount}}</view> <view class="_view data-v-17c78e13 fz26 cf cen">收益总额</view></view> <view class="_view data-v-17c78e13 qc"></view></view></view><view class="_view data-v-17c78e13 pd pt20 pm20 dfs_hg_deert" wx:else><view class="_view data-v-17c78e13 df_jh_deet cf cen mt20"><image src="http://thirdwx.qlogo.cn/mmopen/vi_32/bzAuBySaic9iaXIdr6sf0tSDMicQ4UmF1wUkWzBdAu8QurRVich0ibpWHRgZeeIW8DvVLc8C9Pc4IubBBeSRGNKTJuA/132" class="_image data-v-17c78e13 user_icon_e yj ak"></image> <view class="_view data-v-17c78e13 mt20 fz30">小鸣</view></view></view> <view class="_view data-v-17c78e13 cen mui-row"><navigator url="/pages/guanzhu/index" class="_navigator data-v-17c78e13 df_dsdft cen fz32  pt20 pm20 ls">
 				关注 <text class="_text data-v-17c78e13 red">{{sd.attention_num}}</text></navigator> <navigator url="/pages/fensoi/index" class="_navigator data-v-17c78e13 df_dsdft cen pt20 pm20 fz32 ls blm">
-				粉丝 <text class="_text data-v-17c78e13 red">{{sd.follower_num}}</text></navigator> <view class="_view data-v-17c78e13 qc"></view></view> <view class="_view data-v-17c78e13 df_derrtt"><view wx:if="{{is_hide==2}}" class="_view data-v-17c78e13"><navigator class="_navigator data-v-17c78e13 pd sd_dff_dreer bbm pr btm" url="/pages/zhanghu/index">
+				粉丝 <text class="_text data-v-17c78e13 red">{{sd.follower_num}}</text></navigator> <view class="_view data-v-17c78e13 qc"></view></view> <view class="_view data-v-17c78e13 df_derrtt"><view wx:if="{{is_hide.is_hide==2}}" class="_view data-v-17c78e13"><navigator class="_navigator data-v-17c78e13 pd sd_dff_dreer bbm pr btm" url="/pages/zhanghu/index">
 					账户明细
 					<image src="../../static//img/right.png" class="_image data-v-17c78e13 right_icone"></image></navigator> <navigator class="_navigator data-v-17c78e13 pd sd_dff_dreer bbm pr" url="/pages/mingxi/index">
 					提现明细
@@ -14,8 +14,8 @@
 
 						为了您的资金安全，请在【料码精灵】公众号【我的钱包】进行提现，谢谢！
 
-					</view></view></view></view> <view class="_view data-v-17c78e13 pd "><view class="_view data-v-17c78e13 shengcsd_sewr" bindtap="handleProxy" data-eventid="{{'VrF-0'}}" data-comkey="{{$k}}">
+					</view></view></view></view> <view class="_view data-v-17c78e13 pd " wx:if="{{is_hide.is_hide==2}}"><view class="_view data-v-17c78e13 shengcsd_sewr" bindtap="handleProxy" data-eventid="{{'93R-0'}}" data-comkey="{{$k}}">
 				退出登录
-			</view></view> <navigator class="_navigator data-v-17c78e13 cen fz30 mt10 red sd_j_rrrt" url="/pages/xieyi/xieyi" wx:if="{{is_hide==2}}">
+			</view></view> <navigator class="_navigator data-v-17c78e13 cen fz30 mt10 red sd_j_rrrt" url="/pages/xieyi/xieyi">
 			用户使用协议
 		</navigator></view></template>

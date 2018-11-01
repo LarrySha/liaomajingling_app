@@ -50,70 +50,70 @@
 
 				</view>
 
-<view class='pr sd_jh_eeer'  v-if="is_hide.is_hide==1">
+				<!-- <view class='pr sd_jh_eeer' v-if="is_hide.is_hide==1">
 					<textarea class='br' v-model="form.content "></textarea>
-				</view>
-<view v-if="is_hide.is_hide==2">
+				</view> -->
+				<view>
 
-				<view class="sd_h_deeret" v-if="!liao_sd_a" @click="liao_sd_a=true">
-					<view class='yj4 br df_jh_deert'>
-						<image src='../../static/img/qianbi.png' class='qianbieer cz'></image>
+					<view class="sd_h_deeret" v-if="!liao_sd_a" @click="liao_sd_a=true">
+						<view class='yj4 br df_jh_deert'>
+							<image src='../../static/img/qianbi.png' class='qianbieer cz'></image>
+						</view>
+						<view class="z9 fz26 mt10">文字</view>
+
 					</view>
-					<view class="z9 fz26 mt10">文字</view>
-
-				</view>
 
 
 
 
 
-				<view class="sd_h_deeret" @click="shg_deert" v-if="img.length<=0">
+					<view class="sd_h_deeret" @click="shg_deert" v-if="img.length<=0">
 
-					<view class='yj4 br df_jh_deert'>
-						<image src='../../static/img/tupian.png' class='qianbieer cz'></image>
+						<view class='yj4 br df_jh_deert'>
+							<image src='../../static/img/tupian.png' class='qianbieer cz'></image>
+						</view>
+						<view class="z9 fz26 mt10">图片</view>
+
 					</view>
-					<view class="z9 fz26 mt10">图片</view>
 
+
+
+					<view class="qc"></view>
+				</view>
+
+
+			</view>
+
+
+
+		</view>
+
+
+		<view v-if="is_hide.is_hide==2">
+
+
+			<view class="mt30 df_jh_deer">
+				<text class="bgzhu dsf_jh_s yj"></text><text class="fz30 ml10">定价(元)</text>
+			</view>
+			<view class='pl20'>
+
+				<view v-for="sd in dingjia" class="d_jh_deeert pr20" @click="sd_dsf(sd)">
+
+					<view class='br  ' :class="sd.cls">{{sd.name}}</view>
+				</view>
+
+				<view class='qc'></view>
+
+				<view class="mt20 pr20">
+					<input type="digit" class="sd_deert" placeholder='自定义金额' v-model="form.price"></input>
 				</view>
 
 
 
-				<view class="qc"></view>
-</view>
-
-
 			</view>
 
 
-
 		</view>
-
-
-<view v-if="is_hide.is_hide==2">
-	
-
-		<view class="mt30 df_jh_deer">
-			<text class="bgzhu dsf_jh_s yj"></text><text class="fz30 ml10">定价(元)</text>
-		</view>
-		<view class='pl20'>
-
-			<view v-for="sd in dingjia" class="d_jh_deeert pr20" @click="sd_dsf(sd)">
-
-				<view class='br  ' :class="sd.cls">{{sd.name}}</view>
-			</view>
-
-			<view class='qc'></view>
-
-			<view class="mt20 pr20">
-				<input type="digit" class="sd_deert" placeholder='自定义金额' v-model="form.price"></input>
-			</view>
-
-
-
-		</view>
-
-
-</view>
 
 
 
@@ -134,7 +134,7 @@
 						<image src='../../static/img/down.png' class="down_deert" :class="!is_sdf_a?'':'act'"></image>
 					</view>
 					<view class='mt20' v-if="is_sdf_a">
-						<view class='red fz26 pm40'>所选时间为稿件下架时间，此时段以后将不能被购买
+						<view class='red fz24 pm40'>所选时间为料付费截止时间，此时段以后将不用付费可免费查看
 						</view>
 						<view class='sd_jh_dert fl'>
 
@@ -264,7 +264,7 @@
 			is_sdf_c: false,
 			liao_sd_a: false,
 			liao_sd_b: false,
-			is_hide:"",
+			is_hide: "",
 			moban_ds: 9,
 			form: {
 				title: "", //标题
@@ -483,8 +483,11 @@
 		},
 		mounted() {
 			this.img_url = uni.getStorageSync('img_url')
-		this.is_hide=JSON.parse(uni.getStorageSync("get_key"))
-			
+			this.is_hide = JSON.parse(uni.getStorageSync("get_key"))
+// 			base.ajax("a_get_key",{}, function(data) {
+// 					console.log(data)
+// 			})
+// 
 		},
 	}
 </script>

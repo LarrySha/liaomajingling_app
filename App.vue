@@ -1,23 +1,49 @@
 <script>
 	import base from "common/base.js"
 
-	export default { 
+	export default {
 		onLaunch: function() {
-		
+			base.ajax("a_get_key", '', function(data) {
+				let jiemi = data.data,
+					sd_dffgg = JSON.parse(base.Decrypt(jiemi))
+				console.log(JSON.stringify(sd_dffgg))
+				let banben = 1.0; //版本号
+				if (banben < parseFloat(sd_dffgg.app_version)) {
+					uni.showModal({
+						title: '提示',
+						content: '有新版本更新'+sd_dffgg.app_version,
+						confirmText:"立即更新",
+						success: function(res) {
+							if (res.confirm) { 
+							uni.getSystemInfo({
+								success: function(res) {
+									if (res.platform == "ios") {
+										plus.runtime.openURL(sd_dffgg.ios_update_url);
+										
+									} else {
+										plus.runtime.openURL(sd_dffgg.andr_update_url);
+									}
+								},
+							})
+							}
+						}
+					});
 
-			
-				base.ajax("a_get_key", '', function(data) {
-					let jiemi = data.data,
-						sd_dffgg=JSON.parse(base.Decrypt(jiemi))
-					if(sd_dffgg.is_hide==1){
-						uni.setStorageSync('token', 'a2dd9792520754f93bc1475acb38f3e36746635649573');
 
-					}
 				
+				}
+				if (sd_dffgg.is_hide == 1) {
+					uni.setStorageSync('token', 'acf06b3b90ebe4750afe163b255a2f98c3095540889271');
 
-					uni.setStorageSync('get_key', base.Decrypt(jiemi));
-				}) 
-		
+				} else {
+					if (uni.getStorageSync('token') == "acf06b3b90ebe4750afe163b255a2f98c3095540889271") {
+						uni.removeStorageSync('token');
+					}
+
+				}
+				uni.setStorageSync('get_key', base.Decrypt(jiemi));
+			})
+
 		},
 		onShow: function() {
 

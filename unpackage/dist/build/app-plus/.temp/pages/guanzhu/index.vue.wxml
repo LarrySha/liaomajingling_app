@@ -1,8 +1,8 @@
 <import src="/dx_unp/kongbai.vue.wxml" /><template name="d0207fc6"><view class="_view data-v-8804abd4"><view class="_view data-v-8804abd4 pd pt20 pm20 bbm" wx:for="{{sd_kis}}" wx:for-index="idx" wx:for-item="item"><view class="_view data-v-8804abd4 dsf_jh_deert dian"><image src="{{item.head_img}}" class="_image data-v-8804abd4 yj dfg_jh_dert cz"></image> <text class="_text data-v-8804abd4 fz32 z3 ml10">{{item.nick_name}}</text></view> <view class="_view data-v-8804abd4 ov fz26 z9 df_jh_deert dian tr">
 			{{item.timedf}}
 
-			<view class="_view data-v-8804abd4  tr" bindtap="handleProxy" data-eventid="{{'SW9-0-'+idx}}" data-comkey="{{$k}}"><image src="../../static/img/lajixiang.png" class="_image data-v-8804abd4 lajixiang"></image></view></view> <view class="_view data-v-8804abd4 qc"></view></view> <view class="_view data-v-8804abd4 btm pt20 fz26 pm20 z9 cen" wx:if="{{!is_dsrt&&sd_kis.length>=10}}">
+			<view class="_view data-v-8804abd4  tr" bindtap="handleProxy" data-eventid="{{'6z1-0-'+idx}}" data-comkey="{{$k}}"><image src="../../static/img/lajixiang.png" class="_image data-v-8804abd4 lajixiang"></image></view></view> <view class="_view data-v-8804abd4 qc"></view></view> <view class="_view data-v-8804abd4 btm pt20 fz26 pm20 z9 cen" wx:if="{{!is_dsrt&&sd_kis.length>=10}}">
 		加载中...
 	</view> <view class="_view data-v-8804abd4 btm pt20 fz26 pm20 z9 cen" wx:if="{{is_dsrt&&sd_kis.length>=10}}">
 		已加载全部数据
-	</view> <template wx:if="{{sd_kis.length<=0}}" data="{{...$root['0'], ...$root[$kk+'BCK-0'],$root}}" is="e22f524c"></template></view></template>
+	</view> <template wx:if="{{sd_kis.length<=0}}" data="{{...$root['0'], ...$root[$kk+'cnq-0'],$root}}" is="e22f524c"></template></view></template>

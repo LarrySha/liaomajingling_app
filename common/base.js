@@ -4,7 +4,7 @@ const key = CryptoJS.enc.Utf8.parse("7de8d8a807e217ce"); //十六位十六进制
 import CryptoJS from "../crypto-js"
 import md5 from "../common/md5.js"
 
-function ajax(url, canshu, call) {
+function ajax(url, canshu, call) { 
 
 	let urlsd = url_d + url
 	if (url != "a_get_key") {
@@ -37,10 +37,13 @@ function ajax(url, canshu, call) {
 		data: canshu,
 		success: (res) => {
 			uni.hideLoading();
+			console.log(res.data.code)
 			if (res.data.code == '0001') {
-				uni.navigateTo({
+				uni.removeStorageSync('token');
+				uni.reLaunch({
 					url: '/pages/star/index'
 				});
+
 				return
 			}
 			if (res.data.code == '0002') {
@@ -182,14 +185,14 @@ function authLogout() {
 				console.log(JSON.stringify(s))
 				s.logout(function(e) {
 					uni.showToast({
-						title:"注销登录认证成功！",
+						title: "注销登录认证成功！",
 						icon: "none",
 						duration: 6000
 					});
-					
+
 				}, function(e) {
 					uni.showToast({
-						title:"注销登录认证失败！",
+						title: "注销登录认证失败！",
 						icon: "none",
 						duration: 6000
 					});
@@ -197,7 +200,7 @@ function authLogout() {
 			}
 		}
 	}, function(e) {
-		
+
 	});
 
 

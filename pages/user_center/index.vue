@@ -1,6 +1,5 @@
 <template>
 	<view>
-		
 		<view class='pd pt20 pm20 dfs_hg_deert' v-if="is_hide.is_hide==2">
 			<view class='cf fz26 '>今日收益
 				<view class='df_jh_deet cf cen  fr pr20 ab'>
@@ -68,7 +67,7 @@
 
 
 		<view class="df_derrtt">
-			<view v-if="is_hide==2">
+			<view v-if="is_hide.is_hide==2">
 				<navigator class='pd sd_dff_dreer bbm pr btm' url="/pages/zhanghu/index">
 					账户明细
 					<image src='../../static//img/right.png' class='right_icone'></image>
@@ -92,14 +91,14 @@
 				</view>
 			</view>
 		</view>
-		<view class='pd '>
+		<view class='pd '  v-if="is_hide.is_hide==2">
 			<view class='shengcsd_sewr' @click='tuichu'>
 				退出登录
 			</view>
 		</view>
 
 
-		<navigator class="cen fz30 mt10 red sd_j_rrrt" url="/pages/xieyi/xieyi" v-if="is_hide==2">
+		<navigator class="cen fz30 mt10 red sd_j_rrrt" url="/pages/xieyi/xieyi" >
 			用户使用协议
 		</navigator>
 		<!-- <view class='mt50 fz32 cen z6 gff_cderert' v-if="is_hide">
